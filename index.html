@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NYC Contacts 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif; min-height:100vh;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  position:sticky; top:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.5rem; height:54px;
+}
+.wordmark{
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:1.15rem; letter-spacing:-.03em;
+  color:var(--gold); user-select:none; flex-shrink:0;
+}
+.wordmark em{color:var(--text-dim);font-style:normal;font-weight:600}
+/* Search */
+.search-wrap{flex:1;max-width:340px;position:relative}
+.search-wrap svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--text-mute);pointer-events:none}
+#search{
+  width:100%; background:var(--surf2);
+  border:1px solid var(--border); border-radius:5px;
+  padding:6px 12px 6px 30px;
+  color:var(--text); font-family:'JetBrains Mono',monospace;
+  font-size:.72rem; outline:none; transition:border-color .2s;
+}
+#search:focus{border-color:var(--gold-dim)}
+#search::placeholder{color:var(--text-mute)}
+/* Stats band */
+.stats-band{
+  background:linear-gradient(135deg,rgba(212,168,83,.06),rgba(74,143,196,.04));
+  border-bottom:1px solid var(--border);
+  padding:8px 1.5rem;
+  display:flex; align-items:center; gap:1.5rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.stat-n{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--gold)}
+.stat-l{font-size:.6rem;color:var(--text-mute);text-transform:uppercase;letter-spacing:.07em;margin-left:.25rem}
+.divider{width:1px;height:16px;background:var(--border)}
+/* Table */
+.table-wrap{padding:0 1.5rem 2rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+thead th{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  text-transform:uppercase; letter-spacing:.08em;
+  padding:8px 12px; text-align:left;
+  border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+tbody tr{
+  border-bottom:1px solid var(--border);
+  cursor:pointer; transition:background .12s;
+}
+tbody tr:hover{background:var(--surf2)}
+tbody td{
+  padding:10px 12px; vertical-align:middle;
+  font-size:.88rem;
+}
+.td-num{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.78rem; color:var(--text-dim);
+  white-space:nowrap;
+}
+.td-area{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;
+  color:var(--gold-dim);
+}
+.td-date{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem; color:var(--text-dim);
+  white-space:nowrap;
+}
+.dir-in{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:.7rem}
+.dir-out{color:var(--sky);font-family:'JetBrains Mono',monospace;font-size:.7rem}
+.td-count{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem; color:var(--gold);
+  text-align:center;
+}
+.td-preview{
+  font-size:.82rem; color:var(--text-mute);
+  font-style:italic; max-width:300px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rank{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.footer{
+  padding:1rem 1.5rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  border-top:1px solid var(--border);
+}
+</style></head><body>
+<div class="top-bar">
+  <div class="wordmark">NYC<em>contacts</em></div>
+  <div class="search-wrap">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search" placeholder="search numbers or messages..." oninput="filterTable()">
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:1rem"><a href="search.html" style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);text-decoration:none;letter-spacing:.03em">&#128269; Search All</a><span style="font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--text-mute)">Jan 2025 &rarr; present</span></div>
+</div>
+
+<div class="stats-band">
+  <div><span class="stat-n">43</span><span class="stat-l">contacts</span></div>
+  <div class="divider"></div>
+  <div><span class="stat-n">NYC</span><span class="stat-l">area codes 212 &middot; 347 &middot; 646 &middot; 718 &middot; 917 &middot; 929</span></div>
+  <div class="divider"></div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--text-mute)">click any row to view conversation</div>
+</div>
+
+<div class="table-wrap">
+<table id="contactTable">
+<thead><tr>
+  <th>#</th>
+  <th>Phone Number</th>
+  <th>Area</th>
+  <th>Last Contact</th>
+  <th>Dir</th>
+  <th>Msgs</th>
+  <th>Last Message</th>
+</tr></thead>
+<tbody>
+<tr onclick="window.location='conversations/13477913713.html'">
+  <td class="rank">1</td>
+  <td class="td-num">+1 (347) 791-3713</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2026-04-21</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">362</td>
+  <td class="td-preview">Hopefully when you’re back this way, we can connect when!</td>
+</tr>
+<tr onclick="window.location='conversations/13478563218.html'">
+  <td class="rank">2</td>
+  <td class="td-num">+1 (347) 856-3218</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2026-03-14</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">27</td>
+  <td class="td-preview">OK cool</td>
+</tr>
+<tr onclick="window.location='conversations/13476133202.html'">
+  <td class="rank">3</td>
+  <td class="td-num">+1 (347) 613-3202</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2026-03-09</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">105</td>
+  <td class="td-preview">Wish I knew sooner </td>
+</tr>
+<tr onclick="window.location='conversations/19292688680.html'">
+  <td class="rank">4</td>
+  <td class="td-num">+1 (929) 268-8680</td>
+  <td class="td-area">929</td>
+  <td class="td-date">2026-02-14</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">542</td>
+  <td class="td-preview">Good morning </td>
+</tr>
+<tr onclick="window.location='conversations/19174216680.html'">
+  <td class="rank">5</td>
+  <td class="td-num">+1 (917) 421-6680</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2026-02-10</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">27</td>
+  <td class="td-preview">Sexy. I’ll be in touch. </td>
+</tr>
+<tr onclick="window.location='conversations/16464030883.html'">
+  <td class="rank">6</td>
+  <td class="td-num">+1 (646) 403-0883</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2026-02-09</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">5</td>
+  <td class="td-preview">Yo my bad</td>
+</tr>
+<tr onclick="window.location='conversations/19292574090.html'">
+  <td class="rank">7</td>
+  <td class="td-num">+1 (929) 257-4090</td>
+  <td class="td-area">929</td>
+  <td class="td-date">2026-02-08</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">532</td>
+  <td class="td-preview">Hi there </td>
+</tr>
+<tr onclick="window.location='conversations/19176856529.html'">
+  <td class="rank">8</td>
+  <td class="td-num">+1 (917) 685-6529</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2026-01-15</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">285</td>
+  <td class="td-preview">Ok</td>
+</tr>
+<tr onclick="window.location='conversations/13479909592.html'">
+  <td class="rank">9</td>
+  <td class="td-num">+1 (347) 990-9592</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2026-01-06</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">17</td>
+  <td class="td-preview">The weekend of the 22 may be something </td>
+</tr>
+<tr onclick="window.location='conversations/13476050713.html'">
+  <td class="rank">10</td>
+  <td class="td-num">+1 (347) 605-0713</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-12-03</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">10</td>
+  <td class="td-preview">?</td>
+</tr>
+<tr onclick="window.location='conversations/19176582022.html'">
+  <td class="rank">11</td>
+  <td class="td-num">+1 (917) 658-2022</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-11-24</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">20</td>
+  <td class="td-preview">Are you in Texas.  Thats a bit to pass through NYC. Wasn&#x27;t a…</td>
+</tr>
+<tr onclick="window.location='conversations/13473495820.html'">
+  <td class="rank">12</td>
+  <td class="td-num">+1 (347) 349-5820</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-11-20</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">39</td>
+  <td class="td-preview"> Next weekend</td>
+</tr>
+<tr onclick="window.location='conversations/13479016036.html'">
+  <td class="rank">13</td>
+  <td class="td-num">+1 (347) 901-6036</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-10-25</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">44</td>
+  <td class="td-preview">Oh cool</td>
+</tr>
+<tr onclick="window.location='conversations/16464797107.html'">
+  <td class="rank">14</td>
+  <td class="td-num">+1 (646) 479-7107</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2025-10-03</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">105</td>
+  <td class="td-preview">Hello </td>
+</tr>
+<tr onclick="window.location='conversations/13475304570.html'">
+  <td class="rank">15</td>
+  <td class="td-num">+1 (347) 530-4570</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-09-15</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">92</td>
+  <td class="td-preview">Don’t know how u missed your message</td>
+</tr>
+<tr onclick="window.location='conversations/19174445111.html'">
+  <td class="rank">16</td>
+  <td class="td-num">+1 (917) 444-5111</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-09-15</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">35</td>
+  <td class="td-preview">U got  a  pic  of  ur  d</td>
+</tr>
+<tr onclick="window.location='conversations/12129897882.html'">
+  <td class="rank">17</td>
+  <td class="td-num">+1 (212) 989-7882</td>
+  <td class="td-area">212</td>
+  <td class="td-date">2025-09-13</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">1</td>
+  <td class="td-preview">This Chris</td>
+</tr>
+<tr onclick="window.location='conversations/16465515629.html'">
+  <td class="rank">18</td>
+  <td class="td-num">+1 (646) 551-5629</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2025-09-08</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">6</td>
+  <td class="td-preview">Don&#x27;t seem likenitn</td>
+</tr>
+<tr onclick="window.location='conversations/19176277289.html'">
+  <td class="rank">19</td>
+  <td class="td-num">+1 (917) 627-7289</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-08-11</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">53</td>
+  <td class="td-preview">Just got back to my place </td>
+</tr>
+<tr onclick="window.location='conversations/19175359946.html'">
+  <td class="rank">20</td>
+  <td class="td-num">+1 (917) 535-9946</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-08-10</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">20</td>
+  <td class="td-preview">Hey!! How was your weekend?</td>
+</tr>
+<tr onclick="window.location='conversations/12127291348.html'">
+  <td class="rank">21</td>
+  <td class="td-num">+1 (212) 729-1348</td>
+  <td class="td-area">212</td>
+  <td class="td-date">2025-08-03</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">6</td>
+  <td class="td-preview">I just got in the house from doing some shopping.  I’m doing…</td>
+</tr>
+<tr onclick="window.location='conversations/19176863558.html'">
+  <td class="rank">22</td>
+  <td class="td-num">+1 (917) 686-3558</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-07-29</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">49</td>
+  <td class="td-preview">Happy you made it safely.</td>
+</tr>
+<tr onclick="window.location='conversations/19174353714.html'">
+  <td class="rank">23</td>
+  <td class="td-num">+1 (917) 435-3714</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-07-11</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">76</td>
+  <td class="td-preview">I&#x27;m chillin, wussup </td>
+</tr>
+<tr onclick="window.location='conversations/13473949225.html'">
+  <td class="rank">24</td>
+  <td class="td-num">+1 (347) 394-9225</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-06-29</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">188</td>
+  <td class="td-preview">Are we fukin?</td>
+</tr>
+<tr onclick="window.location='conversations/13476807569.html'">
+  <td class="rank">25</td>
+  <td class="td-num">+1 (347) 680-7569</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-06-29</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">39</td>
+  <td class="td-preview">Wus good dawg.</td>
+</tr>
+<tr onclick="window.location='conversations/19177243602.html'">
+  <td class="rank">26</td>
+  <td class="td-num">+1 (917) 724-3602</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-06-29</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">7</td>
+  <td class="td-preview">I’m sitting on the couch</td>
+</tr>
+<tr onclick="window.location='conversations/19177903955.html'">
+  <td class="rank">27</td>
+  <td class="td-num">+1 (917) 790-3955</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-06-29</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">49</td>
+  <td class="td-preview">♥️ </td>
+</tr>
+<tr onclick="window.location='conversations/19172173648.html'">
+  <td class="rank">28</td>
+  <td class="td-num">+1 (917) 217-3648</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-06-27</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">11</td>
+  <td class="td-preview">Haha I wish I was doing that now </td>
+</tr>
+<tr onclick="window.location='conversations/19176231941.html'">
+  <td class="rank">29</td>
+  <td class="td-num">+1 (917) 623-1941</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-06-27</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">1</td>
+  <td class="td-preview">Hey Isaac this is chris from that good afternoon chris with …</td>
+</tr>
+<tr onclick="window.location='conversations/16466578496.html'">
+  <td class="rank">30</td>
+  <td class="td-num">+1 (646) 657-8496</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2025-06-26</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">136</td>
+  <td class="td-preview">Nice. Same here</td>
+</tr>
+<tr onclick="window.location='conversations/16469611991.html'">
+  <td class="rank">31</td>
+  <td class="td-num">+1 (646) 961-1991</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2025-06-26</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">7</td>
+  <td class="td-preview">Awesome. Thanks sexy</td>
+</tr>
+<tr onclick="window.location='conversations/17187101960.html'">
+  <td class="rank">32</td>
+  <td class="td-num">+1 (718) 710-1960</td>
+  <td class="td-area">718</td>
+  <td class="td-date">2025-06-02</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">1</td>
+  <td class="td-preview">nigga, you blocked me? You coulda jus said you can&#x27;t make it…</td>
+</tr>
+<tr onclick="window.location='conversations/17184151692.html'">
+  <td class="rank">33</td>
+  <td class="td-num">+1 (718) 415-1692</td>
+  <td class="td-area">718</td>
+  <td class="td-date">2025-05-30</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">47</td>
+  <td class="td-preview">Wow! You had a nice long nap. Very cool</td>
+</tr>
+<tr onclick="window.location='conversations/19179753749.html'">
+  <td class="rank">34</td>
+  <td class="td-num">+1 (917) 975-3749</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-05-27</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">33</td>
+  <td class="td-preview">Nice </td>
+</tr>
+<tr onclick="window.location='conversations/13479122132.html'">
+  <td class="rank">35</td>
+  <td class="td-num">+1 (347) 912-2132</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-05-13</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">37</td>
+  <td class="td-preview">Bet</td>
+</tr>
+<tr onclick="window.location='conversations/19176315107.html'">
+  <td class="rank">36</td>
+  <td class="td-num">+1 (917) 631-5107</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-05-12</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">60</td>
+  <td class="td-preview">😡 </td>
+</tr>
+<tr onclick="window.location='conversations/13479882027.html'">
+  <td class="rank">37</td>
+  <td class="td-num">+1 (347) 988-2027</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-05-03</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">7</td>
+  <td class="td-preview">I understand.. thank you bro.</td>
+</tr>
+<tr onclick="window.location='conversations/13476014188.html'">
+  <td class="rank">38</td>
+  <td class="td-num">+1 (347) 601-4188</td>
+  <td class="td-area">347</td>
+  <td class="td-date">2025-04-01</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">76</td>
+  <td class="td-preview">Man, it&#x27;s gets to a point to where I already expect this to …</td>
+</tr>
+<tr onclick="window.location='conversations/17182136381.html'">
+  <td class="rank">39</td>
+  <td class="td-num">+1 (718) 213-6381</td>
+  <td class="td-area">718</td>
+  <td class="td-date">2025-03-08</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">2</td>
+  <td class="td-preview">Hey Chris…of course 🙏🏽</td>
+</tr>
+<tr onclick="window.location='conversations/19174375483.html'">
+  <td class="rank">40</td>
+  <td class="td-num">+1 (917) 437-5483</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-02-07</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">26</td>
+  <td class="td-preview">Thanks bro..</td>
+</tr>
+<tr onclick="window.location='conversations/16468774522.html'">
+  <td class="rank">41</td>
+  <td class="td-num">+1 (646) 877-4522</td>
+  <td class="td-area">646</td>
+  <td class="td-date">2025-01-29</td>
+  <td class="dir-out">&#8593; Out</td>
+  <td class="td-count">119</td>
+  <td class="td-preview">Let me know when you get to Houston </td>
+</tr>
+<tr onclick="window.location='conversations/19178133789.html'">
+  <td class="rank">42</td>
+  <td class="td-num">+1 (917) 813-3789</td>
+  <td class="td-area">917</td>
+  <td class="td-date">2025-01-25</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">26</td>
+  <td class="td-preview">When you coming to DC</td>
+</tr>
+<tr onclick="window.location='conversations/17184149211.html'">
+  <td class="rank">43</td>
+  <td class="td-num">+1 (718) 414-9211</td>
+  <td class="td-area">718</td>
+  <td class="td-date">2025-01-19</td>
+  <td class="dir-in">&#8595; In</td>
+  <td class="td-count">41</td>
+  <td class="td-preview">Back right corner </td>
+</tr>
+</tbody></table></div>
+<div class="footer">generated June 06, 2026 &middot; 43 contacts &middot; newest message first in all conversations</div>
+<script>
+function filterTable(){
+  var q=document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll("#contactTable tbody tr").forEach(function(r){
+    r.style.display=r.innerText.toLowerCase().includes(q)?"":"none";
+  });
+}
+</script>
+</body></html>
