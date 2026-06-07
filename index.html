@@ -105,6 +105,10 @@ tbody td{
   font-size:.78rem; color:var(--text-dim);
   white-space:nowrap;
 }
+.td-name{
+  font-family:'Syne',sans-serif;
+  font-size:.8rem; color:var(--text);
+}
 .td-area{
   font-family:'JetBrains Mono',monospace;
   font-size:.7rem; color:var(--gold-dim);
@@ -130,6 +134,7 @@ tbody td{
   tbody td{padding:13px 8px}
   .td-num{font-size:.82rem}
   .td-date{font-size:.75rem}
+  .td-name{font-size:.78rem}
 }
 .td-preview{
   font-size:.82rem; color:var(--text-mute);
@@ -169,16 +174,18 @@ tbody td{
 <thead><tr>
   <th>#</th>
   <th>Phone Number</th>
-  <th>Area</th>
+  <th class="col-name">Name</th>
+  <th class="col-area">Area</th>
   <th>Last Contact</th>
   <th>Dir</th>
-  <th>Msgs</th>
-  <th>Last Message</th>
+  <th class="col-count">Msgs</th>
+  <th class="col-preview">Last Message</th>
 </tr></thead>
 <tbody>
 <tr onclick="window.location='conversations/13477913713.html'">
   <td class="rank">1</td>
   <td class="td-num">+1 (347) 791-3713</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2026-04-21</td>
   <td class="dir-in">&#8595; In</td>
@@ -188,6 +195,7 @@ tbody td{
 <tr onclick="window.location='conversations/13478563218.html'">
   <td class="rank">2</td>
   <td class="td-num">+1 (347) 856-3218</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2026-03-14</td>
   <td class="dir-in">&#8595; In</td>
@@ -197,6 +205,7 @@ tbody td{
 <tr onclick="window.location='conversations/13476133202.html'">
   <td class="rank">3</td>
   <td class="td-num">+1 (347) 613-3202</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2026-03-09</td>
   <td class="dir-in">&#8595; In</td>
@@ -206,6 +215,7 @@ tbody td{
 <tr onclick="window.location='conversations/19292688680.html'">
   <td class="rank">4</td>
   <td class="td-num">+1 (929) 268-8680</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">929</td>
   <td class="td-date">2026-02-14</td>
   <td class="dir-out">&#8593; Out</td>
@@ -215,6 +225,7 @@ tbody td{
 <tr onclick="window.location='conversations/19174216680.html'">
   <td class="rank">5</td>
   <td class="td-num">+1 (917) 421-6680</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2026-02-10</td>
   <td class="dir-in">&#8595; In</td>
@@ -224,6 +235,7 @@ tbody td{
 <tr onclick="window.location='conversations/16464030883.html'">
   <td class="rank">6</td>
   <td class="td-num">+1 (646) 403-0883</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2026-02-09</td>
   <td class="dir-out">&#8593; Out</td>
@@ -233,6 +245,7 @@ tbody td{
 <tr onclick="window.location='conversations/19292574090.html'">
   <td class="rank">7</td>
   <td class="td-num">+1 (929) 257-4090</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">929</td>
   <td class="td-date">2026-02-08</td>
   <td class="dir-out">&#8593; Out</td>
@@ -242,6 +255,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176856529.html'">
   <td class="rank">8</td>
   <td class="td-num">+1 (917) 685-6529</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2026-01-15</td>
   <td class="dir-out">&#8593; Out</td>
@@ -251,6 +265,7 @@ tbody td{
 <tr onclick="window.location='conversations/13479909592.html'">
   <td class="rank">9</td>
   <td class="td-num">+1 (347) 990-9592</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2026-01-06</td>
   <td class="dir-out">&#8593; Out</td>
@@ -260,6 +275,7 @@ tbody td{
 <tr onclick="window.location='conversations/13476050713.html'">
   <td class="rank">10</td>
   <td class="td-num">+1 (347) 605-0713</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-12-03</td>
   <td class="dir-in">&#8595; In</td>
@@ -269,6 +285,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176582022.html'">
   <td class="rank">11</td>
   <td class="td-num">+1 (917) 658-2022</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-11-24</td>
   <td class="dir-in">&#8595; In</td>
@@ -278,6 +295,7 @@ tbody td{
 <tr onclick="window.location='conversations/13473495820.html'">
   <td class="rank">12</td>
   <td class="td-num">+1 (347) 349-5820</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-11-20</td>
   <td class="dir-out">&#8593; Out</td>
@@ -287,6 +305,7 @@ tbody td{
 <tr onclick="window.location='conversations/13479016036.html'">
   <td class="rank">13</td>
   <td class="td-num">+1 (347) 901-6036</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-10-25</td>
   <td class="dir-in">&#8595; In</td>
@@ -296,6 +315,7 @@ tbody td{
 <tr onclick="window.location='conversations/16464797107.html'">
   <td class="rank">14</td>
   <td class="td-num">+1 (646) 479-7107</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2025-10-03</td>
   <td class="dir-in">&#8595; In</td>
@@ -305,6 +325,7 @@ tbody td{
 <tr onclick="window.location='conversations/13475304570.html'">
   <td class="rank">15</td>
   <td class="td-num">+1 (347) 530-4570</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-09-15</td>
   <td class="dir-in">&#8595; In</td>
@@ -314,6 +335,7 @@ tbody td{
 <tr onclick="window.location='conversations/19174445111.html'">
   <td class="rank">16</td>
   <td class="td-num">+1 (917) 444-5111</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-09-15</td>
   <td class="dir-in">&#8595; In</td>
@@ -323,6 +345,7 @@ tbody td{
 <tr onclick="window.location='conversations/12129897882.html'">
   <td class="rank">17</td>
   <td class="td-num">+1 (212) 989-7882</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">212</td>
   <td class="td-date">2025-09-13</td>
   <td class="dir-out">&#8593; Out</td>
@@ -332,6 +355,7 @@ tbody td{
 <tr onclick="window.location='conversations/16465515629.html'">
   <td class="rank">18</td>
   <td class="td-num">+1 (646) 551-5629</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2025-09-08</td>
   <td class="dir-in">&#8595; In</td>
@@ -341,6 +365,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176277289.html'">
   <td class="rank">19</td>
   <td class="td-num">+1 (917) 627-7289</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-08-11</td>
   <td class="dir-in">&#8595; In</td>
@@ -350,6 +375,7 @@ tbody td{
 <tr onclick="window.location='conversations/19175359946.html'">
   <td class="rank">20</td>
   <td class="td-num">+1 (917) 535-9946</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-08-10</td>
   <td class="dir-out">&#8593; Out</td>
@@ -359,6 +385,7 @@ tbody td{
 <tr onclick="window.location='conversations/12127291348.html'">
   <td class="rank">21</td>
   <td class="td-num">+1 (212) 729-1348</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">212</td>
   <td class="td-date">2025-08-03</td>
   <td class="dir-in">&#8595; In</td>
@@ -368,6 +395,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176863558.html'">
   <td class="rank">22</td>
   <td class="td-num">+1 (917) 686-3558</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-07-29</td>
   <td class="dir-in">&#8595; In</td>
@@ -377,6 +405,7 @@ tbody td{
 <tr onclick="window.location='conversations/19174353714.html'">
   <td class="rank">23</td>
   <td class="td-num">+1 (917) 435-3714</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-07-11</td>
   <td class="dir-out">&#8593; Out</td>
@@ -386,6 +415,7 @@ tbody td{
 <tr onclick="window.location='conversations/13473949225.html'">
   <td class="rank">24</td>
   <td class="td-num">+1 (347) 394-9225</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-06-29</td>
   <td class="dir-out">&#8593; Out</td>
@@ -395,6 +425,7 @@ tbody td{
 <tr onclick="window.location='conversations/13476807569.html'">
   <td class="rank">25</td>
   <td class="td-num">+1 (347) 680-7569</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-06-29</td>
   <td class="dir-out">&#8593; Out</td>
@@ -404,6 +435,7 @@ tbody td{
 <tr onclick="window.location='conversations/19177243602.html'">
   <td class="rank">26</td>
   <td class="td-num">+1 (917) 724-3602</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-06-29</td>
   <td class="dir-in">&#8595; In</td>
@@ -413,6 +445,7 @@ tbody td{
 <tr onclick="window.location='conversations/19177903955.html'">
   <td class="rank">27</td>
   <td class="td-num">+1 (917) 790-3955</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-06-29</td>
   <td class="dir-in">&#8595; In</td>
@@ -422,6 +455,7 @@ tbody td{
 <tr onclick="window.location='conversations/19172173648.html'">
   <td class="rank">28</td>
   <td class="td-num">+1 (917) 217-3648</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-06-27</td>
   <td class="dir-in">&#8595; In</td>
@@ -431,6 +465,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176231941.html'">
   <td class="rank">29</td>
   <td class="td-num">+1 (917) 623-1941</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-06-27</td>
   <td class="dir-out">&#8593; Out</td>
@@ -440,6 +475,7 @@ tbody td{
 <tr onclick="window.location='conversations/16466578496.html'">
   <td class="rank">30</td>
   <td class="td-num">+1 (646) 657-8496</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2025-06-26</td>
   <td class="dir-in">&#8595; In</td>
@@ -449,6 +485,7 @@ tbody td{
 <tr onclick="window.location='conversations/16469611991.html'">
   <td class="rank">31</td>
   <td class="td-num">+1 (646) 961-1991</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2025-06-26</td>
   <td class="dir-in">&#8595; In</td>
@@ -458,6 +495,7 @@ tbody td{
 <tr onclick="window.location='conversations/17187101960.html'">
   <td class="rank">32</td>
   <td class="td-num">+1 (718) 710-1960</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">718</td>
   <td class="td-date">2025-06-02</td>
   <td class="dir-out">&#8593; Out</td>
@@ -467,6 +505,7 @@ tbody td{
 <tr onclick="window.location='conversations/17184151692.html'">
   <td class="rank">33</td>
   <td class="td-num">+1 (718) 415-1692</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">718</td>
   <td class="td-date">2025-05-30</td>
   <td class="dir-in">&#8595; In</td>
@@ -476,6 +515,7 @@ tbody td{
 <tr onclick="window.location='conversations/19179753749.html'">
   <td class="rank">34</td>
   <td class="td-num">+1 (917) 975-3749</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-05-27</td>
   <td class="dir-in">&#8595; In</td>
@@ -485,6 +525,7 @@ tbody td{
 <tr onclick="window.location='conversations/13479122132.html'">
   <td class="rank">35</td>
   <td class="td-num">+1 (347) 912-2132</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-05-13</td>
   <td class="dir-out">&#8593; Out</td>
@@ -494,6 +535,7 @@ tbody td{
 <tr onclick="window.location='conversations/19176315107.html'">
   <td class="rank">36</td>
   <td class="td-num">+1 (917) 631-5107</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-05-12</td>
   <td class="dir-out">&#8593; Out</td>
@@ -503,6 +545,7 @@ tbody td{
 <tr onclick="window.location='conversations/13479882027.html'">
   <td class="rank">37</td>
   <td class="td-num">+1 (347) 988-2027</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-05-03</td>
   <td class="dir-out">&#8593; Out</td>
@@ -512,6 +555,7 @@ tbody td{
 <tr onclick="window.location='conversations/13476014188.html'">
   <td class="rank">38</td>
   <td class="td-num">+1 (347) 601-4188</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">347</td>
   <td class="td-date">2025-04-01</td>
   <td class="dir-out">&#8593; Out</td>
@@ -521,6 +565,7 @@ tbody td{
 <tr onclick="window.location='conversations/17182136381.html'">
   <td class="rank">39</td>
   <td class="td-num">+1 (718) 213-6381</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">718</td>
   <td class="td-date">2025-03-08</td>
   <td class="dir-in">&#8595; In</td>
@@ -530,6 +575,7 @@ tbody td{
 <tr onclick="window.location='conversations/19174375483.html'">
   <td class="rank">40</td>
   <td class="td-num">+1 (917) 437-5483</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-02-07</td>
   <td class="dir-out">&#8593; Out</td>
@@ -539,6 +585,7 @@ tbody td{
 <tr onclick="window.location='conversations/16468774522.html'">
   <td class="rank">41</td>
   <td class="td-num">+1 (646) 877-4522</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">646</td>
   <td class="td-date">2025-01-29</td>
   <td class="dir-out">&#8593; Out</td>
@@ -548,6 +595,7 @@ tbody td{
 <tr onclick="window.location='conversations/19178133789.html'">
   <td class="rank">42</td>
   <td class="td-num">+1 (917) 813-3789</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">917</td>
   <td class="td-date">2025-01-25</td>
   <td class="dir-in">&#8595; In</td>
@@ -557,6 +605,7 @@ tbody td{
 <tr onclick="window.location='conversations/17184149211.html'">
   <td class="rank">43</td>
   <td class="td-num">+1 (718) 414-9211</td>
+  <td class="td-name"><span style="color:var(--text-mute)">—</span></td>
   <td class="td-area">718</td>
   <td class="td-date">2025-01-19</td>
   <td class="dir-in">&#8595; In</td>
