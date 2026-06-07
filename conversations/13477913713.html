@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>+1 (347) 791-3713</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif;
+  display:flex; flex-direction:column;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  flex-shrink:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.25rem; height:52px;
+}
+.back{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--text-dim);
+  text-decoration:none; letter-spacing:.03em;
+  display:flex; align-items:center; gap:5px;
+  transition:color .15s;
+}
+.back:hover{color:var(--gold)}
+.contact-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700; font-size:1rem;
+  color:var(--text); letter-spacing:-.01em;
+}
+.msg-count{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.gold-dot{color:var(--gold)}
+/* Note banner */
+.note-banner{
+  flex-shrink:0;
+  background:linear-gradient(90deg,rgba(212,168,83,.06),transparent);
+  border-bottom:1px solid var(--border);
+  padding:6px 1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  letter-spacing:.04em;
+}
+/* Scrollable message pane */
+.thread-wrap{
+  flex:1;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+/* Thread inner — this is the scrollable box */
+.thread{
+  width:680px; max-width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:20px 1rem 24px;
+  display:flex; flex-direction:column; gap:4px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+}
+.thread::-webkit-scrollbar{width:5px}
+.thread::-webkit-scrollbar-track{background:transparent}
+.thread::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.thread::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+.thread::-webkit-scrollbar-button{display:none;height:0}
+.date-divider{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:14px 0 6px; position:relative;
+}
+.date-divider::before,.date-divider::after{
+  content:''; position:absolute; top:50%;
+  width:30%; height:1px; background:var(--border);
+}
+.date-divider::before{left:0}
+.date-divider::after{right:0}
+.bubble-wrap{display:flex; flex-direction:column}
+.bubble-wrap.out{align-items:flex-end}
+.bubble-wrap.inc{align-items:flex-start}
+.bubble{
+  max-width:72%; padding:9px 13px;
+  border-radius:16px;
+  font-size:.88rem; line-height:1.5;
+  position:relative; word-break:break-word;
+}
+.bubble.out{
+  background:var(--gold-dim);
+  color:var(--text);
+  border-bottom-right-radius:4px;
+  border:1px solid rgba(212,168,83,.15);
+}
+.bubble.inc{
+  background:var(--surf2);
+  color:var(--text);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--border);
+}
+.bubble-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  margin-top:3px; padding:0 2px;
+}
+.bubble-wrap.out .bubble-time{text-align:right}
+.attach{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--gold-dim);
+  font-style:italic; margin-top:4px;
+}
+</style></head><body>
+
+<div class="top-bar">
+  <a class="back" href="../index.html">&#8592; Contacts</a>
+  <div>
+    <div class="contact-name">+1 (347) 791-3713</div>
+  </div>
+  <div class="msg-count"><span class="gold-dot">362</span> messages</div>
+</div>
+<div class="note-banner">Jan 1, 2025 to present &mdash; newest at bottom</div>
+<div class="thread-wrap">
+<div class="thread" id="tw">
+<div class="date-divider">May 27, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup</div>
+  <div class="bubble-time">1:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Got it!</div>
+  <div class="bubble-time">3:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good</div>
+  <div class="bubble-time">3:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wut day you coming to see daddy?</div>
+  <div class="bubble-time">3:36 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😊Well, since I’m picking you up on Thursday, I can come to you Friday</div>
+  <div class="bubble-time">3:38 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Do you know your flight time schedule yet? </div>
+  <div class="bubble-time">3:38 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">If you pickin me up Thursday, you may as well come Thursday and Friday.</div>
+  <div class="bubble-time">3:38 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">No I need to look gimmie a sec to check it</div>
+  <div class="bubble-time">3:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_3298.PNG</div></div>
+  <div class="bubble-time">3:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I may do this flight.</div>
+  <div class="bubble-time">3:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok, so an early flight and you’re coming in at JFK</div>
+  <div class="bubble-time">3:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">3:44 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok cool</div>
+  <div class="bubble-time">3:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh wait.. lemme check the other airport</div>
+  <div class="bubble-time">4:25 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">4:25 PM</div>
+</div>
+<div class="date-divider">May 28, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning Chris , please remember to give me any updates regarding your flight tomorrow. Right now, I’m still using the information you sent me yesterday.</div>
+  <div class="bubble-time">9:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s gonna have to be this flight into jfk it’s the only direct in Delta I can find.</div>
+  <div class="bubble-time">11:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, kool</div>
+  <div class="bubble-time">11:46 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I miss you..😉</div>
+  <div class="bubble-time">11:54 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😊Really, well, I definitely miss you, a lot.</div>
+  <div class="bubble-time">11:55 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , on your way to the airport tomorrow text me please, I want to leave my house @5am, so make sure I’m not late for picking you up.</div>
+  <div class="bubble-time">6:28 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">But, I should be awake because I normally wake up early.</div>
+  <div class="bubble-time">6:29 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo!!</div>
+  <div class="bubble-time">10:27 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s gonna end up being Friday morning that I get in.</div>
+  <div class="bubble-time">10:33 PM</div>
+</div>
+<div class="date-divider">May 29, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, so you’re coming on Friday morning?</div>
+  <div class="bubble-time">1:27 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes.. same time Friday morning instead of Thursday..</div>
+  <div class="bubble-time">1:27 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, thank you</div>
+  <div class="bubble-time">1:28 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m sorry.. and I really appreciate you.</div>
+  <div class="bubble-time">1:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It’s all good!, I’m just glad you told me about the change before I had driven out to the airport. I’m glad you do!</div>
+  <div class="bubble-time">1:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , good evening!</div>
+  <div class="bubble-time">3:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hey!!</div>
+  <div class="bubble-time">3:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">The plan is still the same.</div>
+  <div class="bubble-time">3:49 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok, great! </div>
+  <div class="bubble-time">3:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hey!!!</div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Thank you sooo much again.. you are a life saver..</div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">😘</div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris</div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh you’re welcome, anytime </div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I meant tell you when you were here before, if you wanted me to take you to the airport </div>
+  <div class="bubble-time">9:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I know Lyft and Uber can be expensive </div>
+  <div class="bubble-time">9:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I was jus bout to say that</div>
+  <div class="bubble-time">9:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Uber expensive than a bitch </div>
+  <div class="bubble-time">9:36 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes, it’s too much </div>
+  <div class="bubble-time">9:36 PM</div>
+</div>
+<div class="date-divider">May 30, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Bout to head to the airport now..</div>
+  <div class="bubble-time">2:26 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning Chris , oh ok great </div>
+  <div class="bubble-time">2:32 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">2:37 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Taking off now</div>
+  <div class="bubble-time">4:58 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_3335.PNG</div></div>
+  <div class="bubble-time">4:59 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, I’m in the area already, I left home an hour early to avoid  heavy traffic </div>
+  <div class="bubble-time">5:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh your flight in arriving a little early, that’s great </div>
+  <div class="bubble-time">5:01 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m already here</div>
+  <div class="bubble-time">5:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh wow.. thank you</div>
+  <div class="bubble-time">5:05 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sheraton Brooklyn New York Hotel
+228 Duffield St, Brooklyn, NY 11201</div>
+  <div class="bubble-time">5:06 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You’re welcome, yeah the traffic can be crazy on Friday</div>
+  <div class="bubble-time">5:06 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh, you’re staying in Bklyn this time?</div>
+  <div class="bubble-time">5:07 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chris let me know when your flight lands. I’m waiting near the airport because, they won’t let me wait at the airport. </div>
+  <div class="bubble-time">5:45 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I was there the first day I was here last time.. </div>
+  <div class="bubble-time">6:02 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">6:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus landed </div>
+  <div class="bubble-time">6:02 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">6:03 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I going to drive up to the airport now then</div>
+  <div class="bubble-time">6:03 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok..</div>
+  <div class="bubble-time">6:03 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I just have to grab my luggage.</div>
+  <div class="bubble-time">6:03 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Should I wait a little while then?</div>
+  <div class="bubble-time">6:04 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">They may not let me wait at the airport </div>
+  <div class="bubble-time">6:04 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving up</div>
+  <div class="bubble-time">6:06 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Dang, yea they gon make you go around.. I’m still waking to baggage claim</div>
+  <div class="bubble-time">6:20 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">This is why I hate this airport you have to walk miles to get where you are going lol.</div>
+  <div class="bubble-time">6:20 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I got my shit now</div>
+  <div class="bubble-time">6:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here</div>
+  <div class="bubble-time">6:31 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">D2</div>
+  <div class="bubble-time">6:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok I’m walking from D4 now</div>
+  <div class="bubble-time">6:32 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I guess you can’t jus drive down huh</div>
+  <div class="bubble-time">6:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">yes</div>
+  <div class="bubble-time">6:33 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Please</div>
+  <div class="bubble-time">6:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m at D3</div>
+  <div class="bubble-time">6:33 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’ve been out of town a week already.. these bags are huge</div>
+  <div class="bubble-time">6:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I packed a lot</div>
+  <div class="bubble-time">6:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Knicks hat, light blue and grey</div>
+  <div class="bubble-time">6:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">9:05 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">9:05 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">They don’t have a room ready for me yet.</div>
+  <div class="bubble-time">9:05 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh wow, what are you going to do? You could have come over to my house until it’s ready </div>
+  <div class="bubble-time">9:26 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m jus working in the club lounge they have downstairs for now</div>
+  <div class="bubble-time">9:27 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, I just got back home</div>
+  <div class="bubble-time">9:28 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I got my room </div>
+  <div class="bubble-time">9:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Awesome </div>
+  <div class="bubble-time">10:14 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_8504.png</div></div>
+  <div class="bubble-time">10:15 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd </div>
+  <div class="bubble-time">5:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m at home, watching television </div>
+  <div class="bubble-time">5:58 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Did you get settled in ok?</div>
+  <div class="bubble-time">5:59 PM</div>
+</div>
+<div class="date-divider">May 31, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , hope all is good.</div>
+  <div class="bubble-time">11:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hey!!</div>
+  <div class="bubble-time">11:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus woke up not long ago</div>
+  <div class="bubble-time">11:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, hope you had a nice rest. I’m on my way to the gym </div>
+  <div class="bubble-time">11:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">When I’m seeing you?</div>
+  <div class="bubble-time">11:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You free Sunday?</div>
+  <div class="bubble-time">11:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Or later today?</div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes, I’m free. You can see me anytime </div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When is better for you?</div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Maybe like early tomorrow..</div>
+  <div class="bubble-time">11:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What time is early?</div>
+  <div class="bubble-time">11:44 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">10.</div>
+  <div class="bubble-time">11:46 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Well shit between 10-2..</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok, that’s fine</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Basically from the time I wake up until mid afternoon, I think I’m doin some daytime shit tomorrow like a block party or something.</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh you have a block party tomorrow, are sure we shouldn’t put it off for another time? You sound busy, I’m kool with it.</div>
+  <div class="bubble-time">11:50 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m enjoying New York I’m a tourist… it’s not being busy it called having a work- life balance 🤣</div>
+  <div class="bubble-time">11:52 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You don’t expect me to be stationary just waiting on clients the entirety of my stay do you?</div>
+  <div class="bubble-time">11:52 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I wanna see you, and honestly I dunno what I have going on tomorrow, my friend mentioned day party or something like that, but I never know what’s going on when I deal with him.. but I’m sure I’ll be doing some thing at some point..</div>
+  <div class="bubble-time">11:55 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok, no, you should enjoy yourself. I was only offering another option. But, yes, I was to see you too, I didn’t mean I don’t want to see you.</div>
+  <div class="bubble-time">12:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , hope your day went well. I’m coming over to see you tomorrow but, I just was to make sure we’re on the same page with price, it’s the same as before right?</div>
+  <div class="bubble-time">6:47 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes, for you the same price as before .</div>
+  <div class="bubble-time">6:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Great, thanks, I’m excited about tomorrow, looking forward to spending time with you again. I’m just getting back home, had a long day</div>
+  <div class="bubble-time">7:24 PM</div>
+</div>
+<div class="date-divider">June 01, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, good morning!</div>
+  <div class="bubble-time">7:56 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">7:56 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m getting ready to head out to Bklyn soon</div>
+  <div class="bubble-time">7:57 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">OK bet, I&#x27;m here.. I&#x27;m chillin </div>
+  <div class="bubble-time">7:57 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, I’m driving and I will park in one of the indoor parking near your hotel. I will let you know once I’m on my way. I believe it’s less than an hour drive </div>
+  <div class="bubble-time">7:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">OK bet </div>
+  <div class="bubble-time">8:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m leaving now Chris</div>
+  <div class="bubble-time">8:29 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">8:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">8:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It’s says my ETA is 10:26</div>
+  <div class="bubble-time">8:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok cool </div>
+  <div class="bubble-time">8:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">9:21 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here</div>
+  <div class="bubble-time">9:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m going to look for parking </div>
+  <div class="bubble-time">9:30 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">9:30 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Coming down</div>
+  <div class="bubble-time">9:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m waiting for the parking attendant </div>
+  <div class="bubble-time">9:39 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">9:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here in the lobby </div>
+  <div class="bubble-time">9:51 AM</div>
+</div>
+<div class="date-divider">June 02, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">10:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m on my way to the gym</div>
+  <div class="bubble-time">10:54 AM</div>
+</div>
+<div class="date-divider">June 13, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris !</div>
+  <div class="bubble-time">1:43 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sup babe… I had thought about you earlier.. wussup </div>
+  <div class="bubble-time">1:45 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Really, you thought about me, I didn’t think that you would. However, I was thinking about you today, do I decided to text just to see how you are.</div>
+  <div class="bubble-time">1:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Everytime I drive down Richmond ave near my house you come to mind cause you asked if our as bad as NY</div>
+  <div class="bubble-time">1:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">They actually pulled up the rd and is doing construction so driving on that street is really bad now.. they doing the same on the freeway too.. it’s like driving on big rocks right now lol.</div>
+  <div class="bubble-time">1:58 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😊Oh wow, you have certainly taught me something new about living in Texas </div>
+  <div class="bubble-time">2:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I thought all the roads were smooth </div>
+  <div class="bubble-time">2:00 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">If you go to Dallas it’s much different tho, it’s really raggedy here in houston tho..</div>
+  <div class="bubble-time">2:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Austin has good roads too.</div>
+  <div class="bubble-time">2:01 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yeah, I remember you telling me that the worst roads are in Houston </div>
+  <div class="bubble-time">2:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Here in Houston there’s always construction on the freeways tho.. and they close this same entrance ramp that I typically get on overnight..</div>
+  <div class="bubble-time">2:02 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">So you have to drive around to get to your destination?</div>
+  <div class="bubble-time">2:03 PM</div>
+</div>
+<div class="date-divider">June 23, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, good morning, how are you?</div>
+  <div class="bubble-time">9:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning baby</div>
+  <div class="bubble-time">10:01 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How are you?</div>
+  <div class="bubble-time">10:19 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus work</div>
+  <div class="bubble-time">10:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool, try not to work too hard 😊</div>
+  <div class="bubble-time">10:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I think imma get in Thursday.</div>
+  <div class="bubble-time">10:43 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Night</div>
+  <div class="bubble-time">10:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok!</div>
+  <div class="bubble-time">10:45 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">10:49 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">10:49 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I just got to the gym to get my workout on , legs and shoulders day for me</div>
+  <div class="bubble-time">11:24 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Das wussup</div>
+  <div class="bubble-time">11:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😊 Thanks!</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m hungry</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Are you hungry for food or something else?😊</div>
+  <div class="bubble-time">12:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Both..</div>
+  <div class="bubble-time">12:03 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">lol</div>
+  <div class="bubble-time">12:03 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😀😀😀</div>
+  <div class="bubble-time">12:21 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Am I seeing you this weekend ?</div>
+  <div class="bubble-time">12:29 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ohhh, you’re coming back to New York this weekend? I didn’t really understand your previous text.</div>
+  <div class="bubble-time">12:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">12:50 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You didn’t seem too excited lol</div>
+  <div class="bubble-time">12:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes, I am excited 😆, I just wasn’t sure what your text meant </div>
+  <div class="bubble-time">12:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m always excited when I’m meeting you, we made a great connection.</div>
+  <div class="bubble-time">12:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">😊</div>
+  <div class="bubble-time">1:06 PM</div>
+</div>
+<div class="date-divider">June 24, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , good afternoon </div>
+  <div class="bubble-time">11:13 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup! </div>
+  <div class="bubble-time">11:15 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I was just saying hi and checking in on you!</div>
+  <div class="bubble-time">11:16 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wut you up to?</div>
+  <div class="bubble-time">11:16 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m trying to deal with this hot 🥵 weather we’re having, 100 degrees. I have an appointment later today and I hate the idea of having to go out.</div>
+  <div class="bubble-time">11:18 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I feel like canceling this appointment </div>
+  <div class="bubble-time">11:18 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">The heat makes me feel so miserable ☹️ </div>
+  <div class="bubble-time">11:18 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh wow, 100 sounds great!</div>
+  <div class="bubble-time">11:19 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s gonna be cold there this weekend tho.</div>
+  <div class="bubble-time">11:19 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I don’t know </div>
+  <div class="bubble-time">11:20 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You should probably cancel it.. they’d understand… it’s gonna cool back down toward the end of the week.. </div>
+  <div class="bubble-time">11:20 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I don’t think you need to be out there..</div>
+  <div class="bubble-time">11:20 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes, I think I may call them </div>
+  <div class="bubble-time">11:22 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">2:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m at home, I decided to keep my appointment because, I had canceled it last month so I feel I can’t cancel it again. But they changed the time to 6:30 today. So I’m just home killing time until then. I hate going out in this heat, though</div>
+  <div class="bubble-time">2:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh well that’s good</div>
+  <div class="bubble-time">2:19 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Heat is good for you tho </div>
+  <div class="bubble-time">2:19 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus make sure you drink lots of water</div>
+  <div class="bubble-time">2:20 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thanks!, I will take some with me when I go out </div>
+  <div class="bubble-time">2:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where are you Chris , at work?</div>
+  <div class="bubble-time">2:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I’m at work/home</div>
+  <div class="bubble-time">3:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool</div>
+  <div class="bubble-time">3:01 PM</div>
+</div>
+<div class="date-divider">June 25, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">5:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good morning Chris , how are you doing this morning?</div>
+  <div class="bubble-time">5:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m good.. just packing </div>
+  <div class="bubble-time">5:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, when will you be leaving?</div>
+  <div class="bubble-time">6:13 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Thursday morning</div>
+  <div class="bubble-time">6:39 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool</div>
+  <div class="bubble-time">6:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">EWR 10am</div>
+  <div class="bubble-time">6:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh you’re flying into Newark airport?</div>
+  <div class="bubble-time">6:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">6:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s the earliest flight I can get.</div>
+  <div class="bubble-time">7:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool</div>
+  <div class="bubble-time">7:00 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s United</div>
+  <div class="bubble-time">7:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Did you want me to pick you up or do you have someone?</div>
+  <div class="bubble-time">7:01 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I did want you to pick me up.. lol</div>
+  <div class="bubble-time">7:25 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">😊</div>
+  <div class="bubble-time">7:26 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, you didn’t say it, so I wasn’t sure. Yes. I can pick you up , it’s not a problem. Newark is close to me as I mentioned to you, and I’m on Sabbath, so I’m free.</div>
+  <div class="bubble-time">7:29 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">😊</div>
+  <div class="bubble-time">7:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, do you all packed and ready?</div>
+  <div class="bubble-time">8:21 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">8:52 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool</div>
+  <div class="bubble-time">8:52 PM</div>
+</div>
+<div class="date-divider">June 26, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">4:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good morning Chris</div>
+  <div class="bubble-time">4:52 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m awake, I’m going to walk my dog, then wash up make breakfast, then head out to pick you up, it’s a 20 to 30 minutes drive to the airport from my house </div>
+  <div class="bubble-time">4:54 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">4:55 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I need to be logged into work by 1130..  I should make it to manhattan by then you think?</div>
+  <div class="bubble-time">4:55 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes, it your flight gets in at 10 we can be in Manhattan before then</div>
+  <div class="bubble-time">4:57 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">930</div>
+  <div class="bubble-time">4:57 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh your flight is arriving at 9:30 this morning?</div>
+  <div class="bubble-time">4:58 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">5:16 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, I just walked my dog so let me wash up, I won’t have time to make breakfast then, once I wash up, w will leave to come get you.</div>
+  <div class="bubble-time">5:32 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Could you bring me a Tylenol?</div>
+  <div class="bubble-time">7:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">7:38 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus landed</div>
+  <div class="bubble-time">8:23 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m driving with Do Not Disturb While Driving turned on. I’ll see your message when I get where I’m going.</div>
+  <div class="bubble-time">8:23 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here</div>
+  <div class="bubble-time">8:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m waiting </div>
+  <div class="bubble-time">8:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I parked outside, let me know when you’re coming out</div>
+  <div class="bubble-time">8:25 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok, we still on the plane driving around so it’s gonna be a sec</div>
+  <div class="bubble-time">8:26 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Got it </div>
+  <div class="bubble-time">8:27 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here parked </div>
+  <div class="bubble-time">8:27 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"> Outside the airport though, so tell me when to come around </div>
+  <div class="bubble-time">8:28 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">8:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Did you all land yet?</div>
+  <div class="bubble-time">8:45 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I told you we landed..</div>
+  <div class="bubble-time">8:45 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m walking now</div>
+  <div class="bubble-time">8:46 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Before the plane was driving a mile to the gate after landing</div>
+  <div class="bubble-time">8:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">8:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Should I start driving back now?</div>
+  <div class="bubble-time">8:47 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I still have bags to get</div>
+  <div class="bubble-time">8:48 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">8:48 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’ve never flown into the airport before</div>
+  <div class="bubble-time">8:48 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok I’m at baggage now</div>
+  <div class="bubble-time">8:49 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">8:49 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I got it</div>
+  <div class="bubble-time">8:50 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">8:50 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Door 4</div>
+  <div class="bubble-time">8:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m on my way back </div>
+  <div class="bubble-time">8:51 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">K</div>
+  <div class="bubble-time">8:51 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Pickup 4</div>
+  <div class="bubble-time">8:53 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">1567 Broadway, New York, NY</div>
+  <div class="bubble-time">9:16 AM</div>
+</div>
+<div class="date-divider">June 29, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">10:02 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, good morning, how are you?</div>
+  <div class="bubble-time">10:07 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m good, just woke up here</div>
+  <div class="bubble-time">10:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, sounds like you were tired. I just got back from walking my puppy and, I’m getting ready to leave for the gym now.</div>
+  <div class="bubble-time">10:34 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , are you still leaving tomorrow?</div>
+  <div class="bubble-time">8:33 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">9:07 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">9:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What time tomorrow?</div>
+  <div class="bubble-time">9:34 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Fight leaves 530am</div>
+  <div class="bubble-time">9:57 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ohhh, you have a very early flight </div>
+  <div class="bubble-time">9:57 PM</div>
+</div>
+<div class="date-divider">June 30, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sorry we didn’t get to spend time together </div>
+  <div class="bubble-time">2:17 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I really wanted too</div>
+  <div class="bubble-time">2:18 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd </div>
+  <div class="bubble-time">2:18 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m still here,  wasn&#x27;t able to make the flight..</div>
+  <div class="bubble-time">2:18 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I just in bed </div>
+  <div class="bubble-time">2:18 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">But you said it tomorrow morning</div>
+  <div class="bubble-time">2:19 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You have clients </div>
+  <div class="bubble-time">2:21 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Tonight</div>
+  <div class="bubble-time">2:22 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I don&#x27;t have any scheduled tonight..</div>
+  <div class="bubble-time">2:22 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh, I wish I knew that I would have texted you</div>
+  <div class="bubble-time">2:23 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I can take a Lyft there tonight</div>
+  <div class="bubble-time">2:26 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I can’t drive because I had a few drinks </div>
+  <div class="bubble-time">2:26 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You mean right now? Thought y you meant tonight tonight..</div>
+  <div class="bubble-time">2:27 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yeah tonight</div>
+  <div class="bubble-time">2:28 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">If you want or tomorrow</div>
+  <div class="bubble-time">2:28 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Are you going to sleep?</div>
+  <div class="bubble-time">2:32 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea, I have work for 930</div>
+  <div class="bubble-time">2:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">2:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good night </div>
+  <div class="bubble-time">2:33 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good afternoon Chris , how are you?</div>
+  <div class="bubble-time">1:02 PM</div>
+</div>
+<div class="date-divider">July 02, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, how are you?</div>
+  <div class="bubble-time">8:27 PM</div>
+</div>
+<div class="date-divider">July 03, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good morning Chris , I’ve been texting you ever since you went back, but I haven’t replied. I hope everything ok, get back to me please.</div>
+  <div class="bubble-time">7:38 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good morning Chris , I’ve been texting you ever since you went back, but I haven’t replied. I hope everything ok, get back to me please.</div>
+  <div class="bubble-time">8:47 AM</div>
+</div>
+<div class="date-divider">July 04, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_4552.gif</div></div>
+  <div class="bubble-time">7:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_4552.gif</div></div>
+  <div class="bubble-time">7:30 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning</div>
+  <div class="bubble-time">10:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Are you ok?</div>
+  <div class="bubble-time">10:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes, I’m in Miami right now</div>
+  <div class="bubble-time">10:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok, that’s probably why I wasn’t getting a response from you, but had to make sure you were good.</div>
+  <div class="bubble-time">10:42 AM</div>
+</div>
+<div class="date-divider">July 08, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , how are you?</div>
+  <div class="bubble-time">5:56 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good evening</div>
+  <div class="bubble-time">5:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I hope you’re not being affected by all the flooding in Texas </div>
+  <div class="bubble-time">5:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">No I been outta town all weekend and the flood was nowhere near houston.</div>
+  <div class="bubble-time">5:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ohhh ok great </div>
+  <div class="bubble-time">5:59 PM</div>
+</div>
+<div class="date-divider">July 10, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd </div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , I’m on my computer, working on my book </div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How are you?</div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="date-divider">July 14, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good afternoon Chris !</div>
+  <div class="bubble-time">1:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good day.. wyd</div>
+  <div class="bubble-time">1:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi, sorry for the late reply Chris , I was charging my phone, then I went upstairs to take a shower </div>
+  <div class="bubble-time">6:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">We’re having very bad weather today, so I’m home now after going to the gym earlier</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="date-divider">July 22, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris</div>
+  <div class="bubble-time">9:14 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sup </div>
+  <div class="bubble-time">9:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m just checking in to see how you’re doing </div>
+  <div class="bubble-time">9:16 PM</div>
+</div>
+<div class="date-divider">August 03, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , good morning, happy Sunday!</div>
+  <div class="bubble-time">7:39 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good  morning </div>
+  <div class="bubble-time">10:35 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi there, just checking in on you, hope all is good!</div>
+  <div class="bubble-time">10:52 AM</div>
+</div>
+<div class="date-divider">September 23, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good afternoon Chris, how have you been?</div>
+  <div class="bubble-time">12:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wussup baby.. I been chillin</div>
+  <div class="bubble-time">12:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Nice to hear from you, glad all is well</div>
+  <div class="bubble-time">12:33 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When will you be back in New York?</div>
+  <div class="bubble-time">1:55 PM</div>
+</div>
+<div class="date-divider">September 27, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris </div>
+  <div class="bubble-time">10:22 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sup baby </div>
+  <div class="bubble-time">10:28 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I be been wondering if we will ever connect again.</div>
+  <div class="bubble-time">10:30 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">We will </div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Lemme look now to see when I can come back..</div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok kool</div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">To new York </div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Maybe end of October </div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">10:31 PM</div>
+</div>
+<div class="date-divider">December 25, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_3257.jpeg</div></div>
+  <div class="bubble-time">5:56 PM</div>
+</div>
+<div class="date-divider">December 31, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_3659.jpeg</div></div>
+  <div class="bubble-time">11:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Happy new year </div>
+  <div class="bubble-time">11:03 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thanks</div>
+  <div class="bubble-time">11:17 PM</div>
+</div>
+<div class="date-divider">January 25, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris , how are you?</div>
+  <div class="bubble-time">10:38 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m good, Wus good wit you</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">How’s the weather?</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh the weather here is horrible Chris </div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m trapped in my house </div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">The snow and ice is falling now</div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; IMG_7557.jpeg</div></div>
+  <div class="bubble-time">10:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">https://www.facebook.com/share/r/1JeMUYj5ZZ/?mibextid=wwXIfr</div>
+  <div class="bubble-time">10:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I heard it was bad in Dallas but not in Houston , you’re lucky!</div>
+  <div class="bubble-time">10:43 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s jus cold</div>
+  <div class="bubble-time">10:58 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh ok</div>
+  <div class="bubble-time">10:58 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">And it ain’t even that bad in Dallas.. where it’s bad in Tulsa where mom
+And dad is</div>
+  <div class="bubble-time">10:58 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ohhh wow, I hope they’re ok. This storm is dangerous</div>
+  <div class="bubble-time">10:59 PM</div>
+</div>
+<div class="date-divider">February 11, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good morning Chris , how are you doing?</div>
+  <div class="bubble-time">10:55 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">11:11 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How are you, hope all is good!</div>
+  <div class="bubble-time">11:16 AM</div>
+</div>
+<div class="date-divider">April 05, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good afternoon Chris , Happy Easter!</div>
+  <div class="bubble-time">11:35 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">12:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris! Hope you’re having a great day!</div>
+  <div class="bubble-time">12:58 PM</div>
+</div>
+<div class="date-divider">April 07, 2026</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Nothing much, just watching television at home </div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="date-divider">April 19, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, how are you?</div>
+  <div class="bubble-time">8:37 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hey!!!!</div>
+  <div class="bubble-time">11:19 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Come see me</div>
+  <div class="bubble-time">11:19 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Come see you, where are you? But, I’m planning a trip to Taxas soon.</div>
+  <div class="bubble-time">11:21 PM</div>
+</div>
+<div class="date-divider">April 20, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh you’re here in NYC??</div>
+  <div class="bubble-time">1:30 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">2:21 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning Chris, I wish I’d known sooner, how long will you be staying?</div>
+  <div class="bubble-time">5:41 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m headed back..</div>
+  <div class="bubble-time">6:35 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">🙁Ohh you’re leaving so soon, anyway, have a safe flight.</div>
+  <div class="bubble-time">6:37 AM</div>
+</div>
+<div class="date-divider">April 21, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris, good afternoon, hope you had a great flight to your destination. </div>
+  <div class="bubble-time">1:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">2:34 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hopefully when you’re back this way, we can connect when!</div>
+  <div class="bubble-time">3:08 PM</div>
+</div>
+</div></div><script>var w=document.getElementById('tw');w.scrollTop=w.scrollHeight;</script></body></html>
