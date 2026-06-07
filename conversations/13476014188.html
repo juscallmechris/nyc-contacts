@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>+1 (347) 601-4188</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif;
+  display:flex; flex-direction:column;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  flex-shrink:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.25rem; height:52px;
+}
+.back{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--text-dim);
+  text-decoration:none; letter-spacing:.03em;
+  display:flex; align-items:center; gap:5px;
+  transition:color .15s;
+}
+.back:hover{color:var(--gold)}
+.contact-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700; font-size:1rem;
+  color:var(--text); letter-spacing:-.01em;
+}
+.msg-count{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.gold-dot{color:var(--gold)}
+/* Note banner */
+.note-banner{
+  flex-shrink:0;
+  background:linear-gradient(90deg,rgba(212,168,83,.06),transparent);
+  border-bottom:1px solid var(--border);
+  padding:6px 1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  letter-spacing:.04em;
+}
+/* Scrollable message pane */
+.thread-wrap{
+  flex:1;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+/* Thread inner — this is the scrollable box */
+.thread{
+  width:680px; max-width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:20px 1rem 24px;
+  display:flex; flex-direction:column; gap:4px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+}
+.thread::-webkit-scrollbar{width:5px}
+.thread::-webkit-scrollbar-track{background:transparent}
+.thread::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.thread::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+.thread::-webkit-scrollbar-button{display:none;height:0}
+.date-divider{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:14px 0 6px; position:relative;
+}
+.date-divider::before,.date-divider::after{
+  content:''; position:absolute; top:50%;
+  width:30%; height:1px; background:var(--border);
+}
+.date-divider::before{left:0}
+.date-divider::after{right:0}
+.bubble-wrap{display:flex; flex-direction:column}
+.bubble-wrap.out{align-items:flex-end}
+.bubble-wrap.inc{align-items:flex-start}
+.bubble{
+  max-width:72%; padding:9px 13px;
+  border-radius:16px;
+  font-size:.88rem; line-height:1.5;
+  position:relative; word-break:break-word;
+}
+.bubble.out{
+  background:var(--gold-dim);
+  color:var(--text);
+  border-bottom-right-radius:4px;
+  border:1px solid rgba(212,168,83,.15);
+}
+.bubble.inc{
+  background:var(--surf2);
+  color:var(--text);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--border);
+}
+.bubble-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  margin-top:3px; padding:0 2px;
+}
+.bubble-wrap.out .bubble-time{text-align:right}
+.attach{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--gold-dim);
+  font-style:italic; margin-top:4px;
+}
+</style></head><body>
+
+<div class="top-bar">
+  <a class="back" href="../index.html">&#8592; Contacts</a>
+  <div>
+    <div class="contact-name">+1 (347) 601-4188</div>
+  </div>
+  <div class="msg-count"><span class="gold-dot">76</span> messages</div>
+</div>
+<div class="note-banner">Jan 1, 2025 to present &mdash; newest at bottom</div>
+<div class="thread-wrap">
+<div class="thread" id="tw">
+<div class="date-divider">April 01, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">This is Chris.</div>
+  <div class="bubble-time">12:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">12:45 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris</div>
+  <div class="bubble-time">12:45 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where y&#x27;all from?</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">My partner from New York and I’m from Philadelphia. We just spent time with each other. My partner a Wall Street business man has tons of money, he hot great body  big dick but not aggressive in bed that what I lack. I like those take charge type of guys in bed. Fuck me hard and deep ha! ha!</div>
+  <div class="bubble-time">12:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I love sex and I enjoy good dick. Fuck me in the car, let me suck your dick in the beach fuck in the balcony not that boring fuck</div>
+  <div class="bubble-time">12:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Anyway let me know I could talk forever, it would be my pleasure to let you fuck me</div>
+  <div class="bubble-time">12:54 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where y&#x27;all staying?</div>
+  <div class="bubble-time">1:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sorry my men want to fuck, I’m like not now later with Chris</div>
+  <div class="bubble-time">1:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I was gonna say the same thing, why can&#x27;t I just fuck y&#x27;all now? lol </div>
+  <div class="bubble-time">1:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">All that dirty talk earlier made my dick hard lol</div>
+  <div class="bubble-time">1:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Wow that dick must look huge</div>
+  <div class="bubble-time">1:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">My ass going to swallow that cock. You must be excellent in bed</div>
+  <div class="bubble-time">1:45 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea</div>
+  <div class="bubble-time">1:45 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">That my boyfriend he hot but a bit boring in bed</div>
+  <div class="bubble-time">1:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; 123_1.jpeg</div></div>
+  <div class="bubble-time">1:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And me, you have piercings or tattoos</div>
+  <div class="bubble-time">2:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; 123_1.jpeg</div></div>
+  <div class="bubble-time">2:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Don’t share my boyfriend will kill me</div>
+  <div class="bubble-time">2:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Damn, y&#x27;all hot.</div>
+  <div class="bubble-time">2:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_1690.jpg</div></div>
+  <div class="bubble-time">2:02 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Dam those nipples</div>
+  <div class="bubble-time">2:03 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I love nipple play, you will play with my nipples</div>
+  <div class="bubble-time">2:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">So what we doing</div>
+  <div class="bubble-time">2:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc"><div class="attach">&#128206; 123_1.jpeg</div></div>
+  <div class="bubble-time">2:10 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chris, are we on???</div>
+  <div class="bubble-time">2:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea</div>
+  <div class="bubble-time">2:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What you tryna do bro.. right now? Or tonight ?</div>
+  <div class="bubble-time">2:12 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Right now heading to the gym with friends then dinner then big time fucking with Chris at 11</div>
+  <div class="bubble-time">2:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">So we agreed 2100 11 to 3am.</div>
+  <div class="bubble-time">2:14 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok bet</div>
+  <div class="bubble-time">2:14 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You fuck raw</div>
+  <div class="bubble-time">2:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">👅👅👅👅👅👅</div>
+  <div class="bubble-time">2:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chris can wait to feel your manhole inside fuck me hard I swallow your chocolate milk</div>
+  <div class="bubble-time">2:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😍😍😍😍</div>
+  <div class="bubble-time">2:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Don&#x27;t fucking cancel and no head game</div>
+  <div class="bubble-time">2:33 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What is no head game?</div>
+  <div class="bubble-time">2:47 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Show up don’t cancel. We have the money</div>
+  <div class="bubble-time">2:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I need to be telling y&#x27;all the same..</div>
+  <div class="bubble-time">2:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">The bullshit that happened to me last night.. I&#x27;ll tell y&#x27;all about it when I see y&#x27;all.</div>
+  <div class="bubble-time">2:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Y&#x27;all making me cancel my commitment, so if y&#x27;all cancel on me it&#x27;s gonna be fucked up.. I have trust issues with new clients ..</div>
+  <div class="bubble-time">2:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I keep asking where y&#x27;all stay I still haven&#x27;t gotten an answer..don&#x27;t expect me to drive an hour from where I am.</div>
+  <div class="bubble-time">2:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Wait I don’t know what happened yesterday and I don’t have anything to do with that. Yes I exactly you said you coming and we are expecting you</div>
+  <div class="bubble-time">2:50 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m not blaming you for yesterday bro.. I&#x27;m just saying I deal with people flaking all the time too.. so I know how it is.</div>
+  <div class="bubble-time">2:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool papi we understand, I dealt with that but I feel you real</div>
+  <div class="bubble-time">2:53 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m the one who has the most to lose if y&#x27;all suddenly change y&#x27;all mind.. so I&#x27;m trusting y&#x27;all.</div>
+  <div class="bubble-time">2:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Are y&#x27;all in the woodlands?</div>
+  <div class="bubble-time">2:55 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">2121 midland street apt 4f</div>
+  <div class="bubble-time">2:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Houston?</div>
+  <div class="bubble-time">2:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Respectfully I don’t want no drama I just want some good dick that’s it</div>
+  <div class="bubble-time">2:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Magnolia, TX? 👀</div>
+  <div class="bubble-time">2:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nevermind I found it Midland COURT</div>
+  <div class="bubble-time">2:59 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wait a min.. bro I can find this address I dunno what part of town y&#x27;all on.</div>
+  <div class="bubble-time">2:59 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">*cant</div>
+  <div class="bubble-time">3:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">That Houston 77027</div>
+  <div class="bubble-time">3:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">2121 Midlane  street Houston Tx 77027</div>
+  <div class="bubble-time">3:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m not far from there..</div>
+  <div class="bubble-time">3:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I was bout to say, are you sure it&#x27;s not mid lane?</div>
+  <div class="bubble-time">3:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea mid lane in river oaks area.. ok I know where that is</div>
+  <div class="bubble-time">3:02 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Please dont come stress. Just picture two guy sucking you down</div>
+  <div class="bubble-time">3:03 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">And it&#x27;s mid lane with no street after lol</div>
+  <div class="bubble-time">3:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sorry not from here</div>
+  <div class="bubble-time">3:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I know, it&#x27;s cute lil</div>
+  <div class="bubble-time">3:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">lol</div>
+  <div class="bubble-time">3:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You need a bj to release you stress</div>
+  <div class="bubble-time">3:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Trust me I&#x27;m not a psycho...  imma bout to have 2 fine Cubans serving me like a king and throwing it back on me.. wus there to stress about lol</div>
+  <div class="bubble-time">3:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Y&#x27;all will see I&#x27;m a very laid back and cool person when y&#x27;all meet me.</div>
+  <div class="bubble-time">3:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I don&#x27;t have time for stress I&#x27;m just tryna make money.</div>
+  <div class="bubble-time">3:07 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Go psycho fucking, don’t come here all fuck that ass hard and aggressive</div>
+  <div class="bubble-time">3:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Stepping out see you later papi</div>
+  <div class="bubble-time">3:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">3:20 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sorry my boss blocked the number we still on tonight.. I will text you from a different number</div>
+  <div class="bubble-time">5:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea </div>
+  <div class="bubble-time">5:20 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m taking a nap and setting my alarm </div>
+  <div class="bubble-time">6:26 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I don&#x27;t have a response or update or nothing.. </div>
+  <div class="bubble-time">9:56 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Man, it&#x27;s gets to a point to where I already expect this to happen. I&#x27;m out of 2000 dollars for trusting pranksters</div>
+  <div class="bubble-time">11:16 PM</div>
+</div>
+</div></div><script>var w=document.getElementById('tw');w.scrollTop=w.scrollHeight;</script></body></html>
