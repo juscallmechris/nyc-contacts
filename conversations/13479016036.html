@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>+1 (347) 901-6036</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif;
+  display:flex; flex-direction:column;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  flex-shrink:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.25rem; height:52px;
+}
+.back{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--text-dim);
+  text-decoration:none; letter-spacing:.03em;
+  display:flex; align-items:center; gap:5px;
+  transition:color .15s;
+}
+.back:hover{color:var(--gold)}
+.contact-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700; font-size:1rem;
+  color:var(--text); letter-spacing:-.01em;
+}
+.msg-count{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.gold-dot{color:var(--gold)}
+/* Note banner */
+.note-banner{
+  flex-shrink:0;
+  background:linear-gradient(90deg,rgba(212,168,83,.06),transparent);
+  border-bottom:1px solid var(--border);
+  padding:6px 1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  letter-spacing:.04em;
+}
+/* Scrollable message pane */
+.thread-wrap{
+  flex:1;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+/* Thread inner — this is the scrollable box */
+.thread{
+  width:680px; max-width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:20px 1rem 24px;
+  display:flex; flex-direction:column; gap:4px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+}
+.thread::-webkit-scrollbar{width:5px}
+.thread::-webkit-scrollbar-track{background:transparent}
+.thread::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.thread::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+.thread::-webkit-scrollbar-button{display:none;height:0}
+.date-divider{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:14px 0 6px; position:relative;
+}
+.date-divider::before,.date-divider::after{
+  content:''; position:absolute; top:50%;
+  width:30%; height:1px; background:var(--border);
+}
+.date-divider::before{left:0}
+.date-divider::after{right:0}
+.bubble-wrap{display:flex; flex-direction:column}
+.bubble-wrap.out{align-items:flex-end}
+.bubble-wrap.inc{align-items:flex-start}
+.bubble{
+  max-width:72%; padding:9px 13px;
+  border-radius:16px;
+  font-size:.88rem; line-height:1.5;
+  position:relative; word-break:break-word;
+}
+.bubble.out{
+  background:var(--gold-dim);
+  color:var(--text);
+  border-bottom-right-radius:4px;
+  border:1px solid rgba(212,168,83,.15);
+}
+.bubble.inc{
+  background:var(--surf2);
+  color:var(--text);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--border);
+}
+.bubble-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  margin-top:3px; padding:0 2px;
+}
+.bubble-wrap.out .bubble-time{text-align:right}
+.attach{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--gold-dim);
+  font-style:italic; margin-top:4px;
+}
+</style></head><body>
+
+<div class="top-bar">
+  <a class="back" href="../index.html">&#8592; Contacts</a>
+  <div>
+    <div class="contact-name">+1 (347) 901-6036</div>
+  </div>
+  <div class="msg-count"><span class="gold-dot">44</span> messages</div>
+</div>
+<div class="note-banner">Jan 1, 2025 to present &mdash; newest at bottom</div>
+<div class="thread-wrap">
+<div class="thread" id="tw">
+<div class="date-divider">October 19, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi Chris this is Noah aka GaTsby NYC from zoom</div>
+  <div class="bubble-time">11:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oof just saw myself I look a lil rough today had a rough night last night I got jumped and dragged off my scooter by this crazy guy with a machete (ah the Bronx) so I look a bit rougher than usual today</div>
+  <div class="bubble-time">11:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I got away and he only managed to rip the silver chain from my neck but I was freaked out</div>
+  <div class="bubble-time">11:26 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">11:26 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Damn, I’m sorry</div>
+  <div class="bubble-time">11:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thanks its NYC happens from time to time …. I’m lucky I got away with just a missing necklace but it really freaked me out so I was in bed most of the day and haven’t shaved or brushed my hair </div>
+  <div class="bubble-time">11:28 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Does it happen often to guys who look like me?</div>
+  <div class="bubble-time">11:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Probably less so , I’m a white guy im the Bronx  so it is likely more often for me than most but I know how to handle myself pretty well</div>
+  <div class="bubble-time">11:32 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">So I knock on wood usually have minimal damages</div>
+  <div class="bubble-time">11:32 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I agree and that sucks</div>
+  <div class="bubble-time">11:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It does but it’s a fact of life I’ve adjusted to I’m used to being other for one reason back when I lived in the Midwest for others here</div>
+  <div class="bubble-time">11:44 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s something that doesn’t even cross my mind to happens to be being even in the most sketchiest neighborhoods I couldn’t imagine the amount of anxiety that you would be in</div>
+  <div class="bubble-time">11:45 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Well last night in the moment I was really freaked out but I’ve always had a bit of a target on my head for various different reasons but I’m smart and quick witted and have learned how to survive pretty well</div>
+  <div class="bubble-time">11:46 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s a lot of things that happen to Black people that white people don’t understand simply because they’ve never seen it or never experienced it. I would say this is the same type of situation but the other way around you know.</div>
+  <div class="bubble-time">11:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes and I know a lot more about all of that than most white people esp more than most white peoples in Houston who if nothing has changed just mostly have no clue</div>
+  <div class="bubble-time">11:48 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">They have no idea or if they do tend to be part of the problem </div>
+  <div class="bubble-time">11:49 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’ve been through hell and back here in NYC I’ve finally bounced back on my feet but I started out one of those clueless midwestern white boys I’ve seen a lot since then</div>
+  <div class="bubble-time">11:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Some through my experience some through various boyfriends and friends </div>
+  <div class="bubble-time">11:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And partly because for various reasons I myself have felt the really scary feeling when your not used to it of having your priveledge dissolve </div>
+  <div class="bubble-time">11:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">That moment when you know that no matter what comes out of your mouth that cop in front of you has made up his mind based on what he sees and nothing you say no matter how well spoken or educated you are is gonna change the outcome of what he’s about to do</div>
+  <div class="bubble-time">11:54 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’ve had that moment and with it the realization that for many people who aren’t wite this is not an a typical experience </div>
+  <div class="bubble-time">11:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It is eye opening </div>
+  <div class="bubble-time">11:56 PM</div>
+</div>
+<div class="date-divider">October 20, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo gimmie a sec, I got a client here..</div>
+  <div class="bubble-time">12:23 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">No problem</div>
+  <div class="bubble-time">12:23 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Just ain’t want you to think I was ignoring you.. imma hit you back when I’m done.</div>
+  <div class="bubble-time">12:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">That’s cool. I understand I look forward to it.</div>
+  <div class="bubble-time">12:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup</div>
+  <div class="bubble-time">1:21 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Not much just smoking a bit getting some things prepped for the wick ahead</div>
+  <div class="bubble-time">1:22 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Week ahead </div>
+  <div class="bubble-time">1:25 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What’re you up to</div>
+  <div class="bubble-time">1:39 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Grabbing some food</div>
+  <div class="bubble-time">1:39 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m cooking myself</div>
+  <div class="bubble-time">1:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nice</div>
+  <div class="bubble-time">3:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I love cooking </div>
+  <div class="bubble-time">3:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Are you on zoom now</div>
+  <div class="bubble-time">3:58 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">No</div>
+  <div class="bubble-time">3:58 AM</div>
+</div>
+<div class="date-divider">October 24, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">11:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi</div>
+  <div class="bubble-time">11:05 PM</div>
+</div>
+<div class="date-divider">October 25, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What’s up </div>
+  <div class="bubble-time">4:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You in town </div>
+  <div class="bubble-time">4:50 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m in Dallas Texas</div>
+  <div class="bubble-time">4:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh did I miss you in NYC</div>
+  <div class="bubble-time">6:20 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">No I gotta come next weekend</div>
+  <div class="bubble-time">7:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Oh cool</div>
+  <div class="bubble-time">8:27 PM</div>
+</div>
+</div></div><script>var w=document.getElementById('tw');w.scrollTop=w.scrollHeight;</script></body></html>
