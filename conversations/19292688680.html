@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>+1 (929) 268-8680</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif;
+  display:flex; flex-direction:column;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  flex-shrink:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.25rem; height:52px;
+}
+.back{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--text-dim);
+  text-decoration:none; letter-spacing:.03em;
+  display:flex; align-items:center; gap:5px;
+  transition:color .15s;
+}
+.back:hover{color:var(--gold)}
+.contact-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700; font-size:1rem;
+  color:var(--text); letter-spacing:-.01em;
+}
+.msg-count{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.gold-dot{color:var(--gold)}
+/* Note banner */
+.note-banner{
+  flex-shrink:0;
+  background:linear-gradient(90deg,rgba(212,168,83,.06),transparent);
+  border-bottom:1px solid var(--border);
+  padding:6px 1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  letter-spacing:.04em;
+}
+/* Scrollable message pane */
+.thread-wrap{
+  flex:1;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+/* Thread inner — this is the scrollable box */
+.thread{
+  width:680px; max-width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:20px 1rem 24px;
+  display:flex; flex-direction:column; gap:4px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+}
+.thread::-webkit-scrollbar{width:5px}
+.thread::-webkit-scrollbar-track{background:transparent}
+.thread::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.thread::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+.thread::-webkit-scrollbar-button{display:none;height:0}
+.date-divider{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:14px 0 6px; position:relative;
+}
+.date-divider::before,.date-divider::after{
+  content:''; position:absolute; top:50%;
+  width:30%; height:1px; background:var(--border);
+}
+.date-divider::before{left:0}
+.date-divider::after{right:0}
+.bubble-wrap{display:flex; flex-direction:column}
+.bubble-wrap.out{align-items:flex-end}
+.bubble-wrap.inc{align-items:flex-start}
+.bubble{
+  max-width:72%; padding:9px 13px;
+  border-radius:16px;
+  font-size:.88rem; line-height:1.5;
+  position:relative; word-break:break-word;
+}
+.bubble.out{
+  background:var(--gold-dim);
+  color:var(--text);
+  border-bottom-right-radius:4px;
+  border:1px solid rgba(212,168,83,.15);
+}
+.bubble.inc{
+  background:var(--surf2);
+  color:var(--text);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--border);
+}
+.bubble-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  margin-top:3px; padding:0 2px;
+}
+.bubble-wrap.out .bubble-time{text-align:right}
+.attach{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--gold-dim);
+  font-style:italic; margin-top:4px;
+}
+</style></head><body>
+
+<div class="top-bar">
+  <a class="back" href="../index.html">&#8592; Contacts</a>
+  <div>
+    <div class="contact-name">+1 (929) 268-8680</div>
+  </div>
+  <div class="msg-count"><span class="gold-dot">542</span> messages</div>
+</div>
+<div class="note-banner">Jan 1, 2025 to present &mdash; newest at bottom</div>
+<div class="thread-wrap">
+<div class="thread" id="tw">
+<div class="date-divider">May 11, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Dis Chris</div>
+  <div class="bubble-time">12:26 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_3095.jpg</div></div>
+  <div class="bubble-time">12:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">❤️</div>
+  <div class="bubble-time">2:24 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd bro</div>
+  <div class="bubble-time">8:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chillin</div>
+  <div class="bubble-time">9:18 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Want me to come</div>
+  <div class="bubble-time">9:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea, I&#x27;m bout to step out for a drink and then come back</div>
+  <div class="bubble-time">9:22 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok?</div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo, what I told you earlier?</div>
+  <div class="bubble-time">10:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes</div>
+  <div class="bubble-time">11:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you staying?</div>
+  <div class="bubble-time">11:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Renaissance New York Midtown Hotel
+218 W 35th St, New York, NY 10001</div>
+  <div class="bubble-time">11:25 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Elevator key card?</div>
+  <div class="bubble-time">11:25 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nope</div>
+  <div class="bubble-time">11:29 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">1806</div>
+  <div class="bubble-time">11:29 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m still out right now</div>
+  <div class="bubble-time">11:29 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">11:29 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What time will you be back?</div>
+  <div class="bubble-time">11:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">?</div>
+  <div class="bubble-time">11:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Imma leave here at 2</div>
+  <div class="bubble-time">11:49 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ima be sleep then</div>
+  <div class="bubble-time">11:54 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You gon pull up in the morning?</div>
+  <div class="bubble-time">11:57 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">If I come at 2am can we spend the night?</div>
+  <div class="bubble-time">11:58 PM</div>
+</div>
+<div class="date-divider">May 12, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You can stay over</div>
+  <div class="bubble-time">12:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">12:02 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What time will you be there?</div>
+  <div class="bubble-time">12:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I don&#x27;t know </div>
+  <div class="bubble-time">12:09 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I jus know I&#x27;m leaving here at 2</div>
+  <div class="bubble-time">12:09 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I estimate it takes me about 30 min to get back.. I&#x27;m in Brooklyn right now.</div>
+  <div class="bubble-time">12:10 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What club are you at</div>
+  <div class="bubble-time">12:10 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m at a bar.. I dunno</div>
+  <div class="bubble-time">12:11 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Buntons world famous </div>
+  <div class="bubble-time">12:11 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool prob wont be back until 2:30</div>
+  <div class="bubble-time">12:20 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m bout to leave here</div>
+  <div class="bubble-time">12:38 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Headed to you</div>
+  <div class="bubble-time">1:25 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo!</div>
+  <div class="bubble-time">8:32 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo, hit me back..</div>
+  <div class="bubble-time">9:50 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What happened?</div>
+  <div class="bubble-time">9:51 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wut you mean?</div>
+  <div class="bubble-time">9:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I came there last night</div>
+  <div class="bubble-time">9:53 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Knocked on door</div>
+  <div class="bubble-time">9:53 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Called</div>
+  <div class="bubble-time">9:53 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">No answer</div>
+  <div class="bubble-time">9:53 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I see we gonna have to work on yo communication and response times.</div>
+  <div class="bubble-time">9:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Apparently, my expectations weren&#x27;t made clear..</div>
+  <div class="bubble-time">9:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I called you back tho.</div>
+  <div class="bubble-time">9:59 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You called me at 4am</div>
+  <div class="bubble-time">10:00 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea</div>
+  <div class="bubble-time">10:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It was always clear I was coming around 2:30</div>
+  <div class="bubble-time">10:00 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok bro..</div>
+  <div class="bubble-time">10:01 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">When you pulling up, I need to bust one on yo face.</div>
+  <div class="bubble-time">10:01 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Soon</div>
+  <div class="bubble-time">10:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good</div>
+  <div class="bubble-time">10:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">11:07 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Driving there</div>
+  <div class="bubble-time">11:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok...</div>
+  <div class="bubble-time">11:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m on the clock... but I work remotely..</div>
+  <div class="bubble-time">11:34 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">11:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Should I not come?</div>
+  <div class="bubble-time">11:48 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You can come chill wit me if you down..</div>
+  <div class="bubble-time">11:48 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I have a lunch break coming up too.</div>
+  <div class="bubble-time">11:48 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool what time is lunch?</div>
+  <div class="bubble-time">11:49 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">If you want my undivided attention you can come at 6 when I get off ..</div>
+  <div class="bubble-time">11:49 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Lunch is 1:15 I think.. lemme check</div>
+  <div class="bubble-time">11:50 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea 115</div>
+  <div class="bubble-time">11:52 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I might need you to nut and I can leave and come back later</div>
+  <div class="bubble-time">11:52 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Let me know</div>
+  <div class="bubble-time">11:54 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m down for it..</div>
+  <div class="bubble-time">11:58 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Lemme know what you decide..</div>
+  <div class="bubble-time">12:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Coming up</div>
+  <div class="bubble-time">12:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">At door</div>
+  <div class="bubble-time">12:27 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;ll let you know where I&#x27;ll be later</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">4:58 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">W New York - Times Square
+1567 Broadway, New York, NY 10036</div>
+  <div class="bubble-time">5:04 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">9:25 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">10:15 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Just finished watching game with friends</div>
+  <div class="bubble-time">10:22 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What you bout to do now?</div>
+  <div class="bubble-time">10:32 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Was going home. Need to do some work</div>
+  <div class="bubble-time">10:38 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can I come in the am?</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Imma try and get some sleep then..</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Pull up on daddy tomorrow fasho</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ima try to come like 630/7</div>
+  <div class="bubble-time">10:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea do that.. </div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Das perfect</div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Does the hotel require key for elevator?</div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes</div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Def daddy</div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="date-divider">May 13, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Overslept</div>
+  <div class="bubble-time">6:42 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">6:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What time you check out?</div>
+  <div class="bubble-time">7:27 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">4pm</div>
+  <div class="bubble-time">8:24 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can I come in 5 min?</div>
+  <div class="bubble-time">1:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">6:12 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo!</div>
+  <div class="bubble-time">6:24 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m at the airport now..</div>
+  <div class="bubble-time">6:25 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">6:35 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Here?</div>
+  <div class="bubble-time">6:56 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m at the airport now..</div>
+  <div class="bubble-time">6:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I hit you at 2pm</div>
+  <div class="bubble-time">6:57 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When I was 5min away</div>
+  <div class="bubble-time">6:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I know but I ain&#x27;t see it... 😢</div>
+  <div class="bubble-time">7:00 PM</div>
+</div>
+<div class="date-divider">May 14, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">When you coming to see me?</div>
+  <div class="bubble-time">11:20 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Maybe next week</div>
+  <div class="bubble-time">2:48 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You miss me?</div>
+  <div class="bubble-time">2:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I really do, I was mad I ain&#x27;t get  that overnight wit you the other day.</div>
+  <div class="bubble-time">4:18 PM</div>
+</div>
+<div class="date-divider">May 17, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Miss you 2</div>
+  <div class="bubble-time">9:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">11:26 PM</div>
+</div>
+<div class="date-divider">May 18, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">2:49 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thinking Bout you. Bout to masturbate</div>
+  <div class="bubble-time">2:50 PM</div>
+</div>
+<div class="date-divider">May 21, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Bro</div>
+  <div class="bubble-time">11:52 PM</div>
+</div>
+<div class="date-divider">May 22, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">8:39 AM</div>
+</div>
+<div class="date-divider">May 23, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">?</div>
+  <div class="bubble-time">9:23 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo gonna make time for daddy next weekend?</div>
+  <div class="bubble-time">9:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ima def try</div>
+  <div class="bubble-time">10:25 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where will you be?</div>
+  <div class="bubble-time">10:25 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Tf</div>
+  <div class="bubble-time">10:29 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wut you mean try?</div>
+  <div class="bubble-time">10:30 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I have to get off work</div>
+  <div class="bubble-time">3:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where will you be?</div>
+  <div class="bubble-time">3:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nigga, you better make some time to see bro.. I&#x27;m not playing wit you..</div>
+  <div class="bubble-time">3:58 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Like the energy</div>
+  <div class="bubble-time">5:40 PM</div>
+</div>
+<div class="date-divider">May 24, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Do I need to come to Houston?</div>
+  <div class="bubble-time">12:45 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">?</div>
+  <div class="bubble-time">9:24 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nah, I&#x27;m not in Houston right now..</div>
+  <div class="bubble-time">9:53 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">10:13 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Coming to ny?</div>
+  <div class="bubble-time">10:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes, I&#x27;m in DC till Thursday then I come to NYC</div>
+  <div class="bubble-time">12:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">12:42 PM</div>
+</div>
+<div class="date-divider">May 25, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What part if ny you stay?</div>
+  <div class="bubble-time">11:58 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Les</div>
+  <div class="bubble-time">12:27 PM</div>
+</div>
+<div class="date-divider">May 27, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I dunno wut that is.</div>
+  <div class="bubble-time">1:54 PM</div>
+</div>
+<div class="date-divider">May 28, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo, Wus wrong wit you nigga? </div>
+  <div class="bubble-time">11:55 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">3:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup</div>
+  <div class="bubble-time">3:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chillin you</div>
+  <div class="bubble-time">3:46 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m tryna see you nigga..</div>
+  <div class="bubble-time">3:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Same</div>
+  <div class="bubble-time">3:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When you get in?</div>
+  <div class="bubble-time">3:57 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Either tomorrow or Thursday</div>
+  <div class="bubble-time">3:57 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Tomorrow is Thursday daddy</div>
+  <div class="bubble-time">4:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Das right..</div>
+  <div class="bubble-time">4:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">May bad.. either tomorrow morning or Friday morning..</div>
+  <div class="bubble-time">4:18 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok cool</div>
+  <div class="bubble-time">4:18 PM</div>
+</div>
+<div class="date-divider">May 29, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus good</div>
+  <div class="bubble-time">8:58 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">12:37 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I get in Friday early morning</div>
+  <div class="bubble-time">5:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok cool</div>
+  <div class="bubble-time">5:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you staying?</div>
+  <div class="bubble-time">6:00 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Manhattan</div>
+  <div class="bubble-time">6:00 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">The Algonquin Hotel Times Square — 59 W 44th St, New York, NY 10036</div>
+  <div class="bubble-time">6:01 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool what time will you be free?</div>
+  <div class="bubble-time">6:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">After 6pm</div>
+  <div class="bubble-time">6:01 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You can come fuk wit me during the day while I&#x27;m on the clock like you did last time, you know imma make time for you regardless bro..</div>
+  <div class="bubble-time">6:02 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool you will have room access early?</div>
+  <div class="bubble-time">6:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Don&#x27;t call me bro</div>
+  <div class="bubble-time">6:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Want to be baby</div>
+  <div class="bubble-time">6:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Or bitch</div>
+  <div class="bubble-time">6:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You right baby, my bad..</div>
+  <div class="bubble-time">6:06 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thanks daddy</div>
+  <div class="bubble-time">6:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Das the last and only time imma let you check me tho, don&#x27;t think you gon make that a habit...</div>
+  <div class="bubble-time">6:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Don&#x27;t try and get bold.. </div>
+  <div class="bubble-time">6:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea they let me check in at 8am</div>
+  <div class="bubble-time">6:07 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I should be able to check you</div>
+  <div class="bubble-time">6:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You mine and I&#x27;m yours</div>
+  <div class="bubble-time">6:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I would never disrespect</div>
+  <div class="bubble-time">6:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Your the king</div>
+  <div class="bubble-time">6:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">6:08 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea, but I&#x27;m the nigga who run shit at the end of the day..</div>
+  <div class="bubble-time">6:09 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes you are daddy</div>
+  <div class="bubble-time">6:09 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Exactly, as long as it don&#x27;t be on no disrespect shit and you know your place then we good, in that situation you can correct me from time to time das cool wit me.</div>
+  <div class="bubble-time">6:10 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I need to sleep. Imma hit you later tonight</div>
+  <div class="bubble-time">6:11 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok daddy</div>
+  <div class="bubble-time">6:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I understand</div>
+  <div class="bubble-time">6:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hit me when you wake up</div>
+  <div class="bubble-time">6:13 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m up</div>
+  <div class="bubble-time">6:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">That was quick</div>
+  <div class="bubble-time">6:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I couldn&#x27;t sleep</div>
+  <div class="bubble-time">6:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Was thinking too much about you.</div>
+  <div class="bubble-time">6:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Damn daddy can&#x27;t wait to feel you</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I know you don&#x27;t like video or sending pics of your dick but wish I could beat off ti you when I&#x27;m horny</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_3058.MOV</div></div>
+  <div class="bubble-time">7:12 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Pho</div>
+  <div class="bubble-time">7:12 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_2869.jpg</div></div>
+  <div class="bubble-time">7:12 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_3058.MOV</div></div>
+  <div class="bubble-time">7:12 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Two Times Square, 714 Seventh Avenue at, W 48th St, New York, NY 10036</div>
+  <div class="bubble-time">7:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Damn daddy</div>
+  <div class="bubble-time">7:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You moved hotels?</div>
+  <div class="bubble-time">7:27 PM</div>
+</div>
+<div class="date-divider">May 30, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes..</div>
+  <div class="bubble-time">5:12 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sheraton Brooklyn New York Hotel
+228 Duffield St, Brooklyn, NY 11201</div>
+  <div class="bubble-time">5:13 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">My bad .. So it&#x27;s gonna be the first one I was at when you met me.. in Brooklyn.</div>
+  <div class="bubble-time">5:13 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">6:59 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning</div>
+  <div class="bubble-time">6:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Here</div>
+  <div class="bubble-time">7:06 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can I come at 1?</div>
+  <div class="bubble-time">11:26 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea that&#x27;s cool </div>
+  <div class="bubble-time">11:28 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I mean ..nah not at 1.</div>
+  <div class="bubble-time">11:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sooner?</div>
+  <div class="bubble-time">11:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I was gonna clock out of work 1:30 for a half day, but then I have an appointment for 2.</div>
+  <div class="bubble-time">11:31 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Let me come by now can be there in 20 and can leave 1:45</div>
+  <div class="bubble-time">11:34 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m still waiting on my room to be ready.. </div>
+  <div class="bubble-time">11:37 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hold on lemme go ask them..</div>
+  <div class="bubble-time">11:37 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">11:37 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m working in the lounge area right now..</div>
+  <div class="bubble-time">11:37 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hold on</div>
+  <div class="bubble-time">11:37 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok cool</div>
+  <div class="bubble-time">11:40 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It&#x27;s still not ready</div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">11:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I&#x27;ll come tonight</div>
+  <div class="bubble-time">11:44 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Bet</div>
+  <div class="bubble-time">11:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can I come 330/345</div>
+  <div class="bubble-time">1:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea, pull up</div>
+  <div class="bubble-time">4:47 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What happened?</div>
+  <div class="bubble-time">5:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I feel asleep </div>
+  <div class="bubble-time">5:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Headed there</div>
+  <div class="bubble-time">6:20 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m at target across the street</div>
+  <div class="bubble-time">6:22 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How long til your back?</div>
+  <div class="bubble-time">6:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">No longer than 20 min</div>
+  <div class="bubble-time">6:24 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You?</div>
+  <div class="bubble-time">6:30 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Walking back..</div>
+  <div class="bubble-time">6:37 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Walking</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok.. you want me to come down bring you a key again?</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Like last time?</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Pls</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">2 min away</div>
+  <div class="bubble-time">6:51 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">6:52 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">1205</div>
+  <div class="bubble-time">6:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">6:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">On block</div>
+  <div class="bubble-time">6:54 PM</div>
+</div>
+<div class="date-divider">May 31, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">10:14 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning</div>
+  <div class="bubble-time">10:18 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">10:32 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Bout to go out with a friend</div>
+  <div class="bubble-time">10:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You!</div>
+  <div class="bubble-time">10:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">?</div>
+  <div class="bubble-time">10:41 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Just stepped out to let housekeeping work.</div>
+  <div class="bubble-time">10:44 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I need to find a way to deposit all this cash das on me..</div>
+  <div class="bubble-time">10:44 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you goto bank?</div>
+  <div class="bubble-time">10:47 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Which bank?</div>
+  <div class="bubble-time">10:47 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Do you have an account?</div>
+  <div class="bubble-time">10:49 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Going to the bank is the common sense answer of course.. but the dilemma is that my bank is not out here..</div>
+  <div class="bubble-time">10:50 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">The closest location is somewhere in a place called Kings Point, NY.. I bank with Navy Federal.</div>
+  <div class="bubble-time">10:50 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ahhhhh</div>
+  <div class="bubble-time">11:11 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Navy federal popular out here</div>
+  <div class="bubble-time">11:11 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where?</div>
+  <div class="bubble-time">11:12 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m seeing you this evening right?</div>
+  <div class="bubble-time">11:32 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes</div>
+  <div class="bubble-time">4:25 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Bet</div>
+  <div class="bubble-time">4:25 PM</div>
+</div>
+<div class="date-divider">June 01, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">1:01 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sup baby </div>
+  <div class="bubble-time">1:19 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Chillin what you doing?</div>
+  <div class="bubble-time">1:21 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Jus got back to the room </div>
+  <div class="bubble-time">1:29 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Fuked up </div>
+  <div class="bubble-time">1:29 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Should I come In am?</div>
+  <div class="bubble-time">1:30 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes </div>
+  <div class="bubble-time">7:20 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When you leaving</div>
+  <div class="bubble-time">9:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Tuesday</div>
+  <div class="bubble-time">11:15 PM</div>
+</div>
+<div class="date-divider">June 02, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You coming over?</div>
+  <div class="bubble-time">9:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">9:24 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo wussup </div>
+  <div class="bubble-time">9:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Busy?</div>
+  <div class="bubble-time">10:00 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nah.. I&#x27;m chillin </div>
+  <div class="bubble-time">10:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Want to see you before you leave</div>
+  <div class="bubble-time">10:04 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Pull up..</div>
+  <div class="bubble-time">10:06 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">1:30am?</div>
+  <div class="bubble-time">10:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I&#x27;ll be up </div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="date-divider">June 03, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">1:38 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup </div>
+  <div class="bubble-time">1:52 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you meet me in city?</div>
+  <div class="bubble-time">8:45 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I jus landed back in Houston </div>
+  <div class="bubble-time">8:54 AM</div>
+</div>
+<div class="date-divider">June 25, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus good</div>
+  <div class="bubble-time">5:10 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">12:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Can we fuk this time?</div>
+  <div class="bubble-time">12:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Are you here?</div>
+  <div class="bubble-time">12:51 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">In the morning </div>
+  <div class="bubble-time">12:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool</div>
+  <div class="bubble-time">12:52 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">nigga answer my question..</div>
+  <div class="bubble-time">12:52 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes</div>
+  <div class="bubble-time">1:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">In the morning</div>
+  <div class="bubble-time">1:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Send me a pic of it daddy</div>
+  <div class="bubble-time">1:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_8442.jpg</div></div>
+  <div class="bubble-time">1:54 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Not loading for me</div>
+  <div class="bubble-time">4:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Damn, I dunno what to tell you..</div>
+  <div class="bubble-time">4:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Is this google voice?</div>
+  <div class="bubble-time">4:48 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">No</div>
+  <div class="bubble-time">10:48 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Resend it</div>
+  <div class="bubble-time">10:48 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_8442.jpg</div></div>
+  <div class="bubble-time">10:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Nice</div>
+  <div class="bubble-time">11:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Was hoping to see my friend</div>
+  <div class="bubble-time">11:04 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Did it come?</div>
+  <div class="bubble-time">11:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes you with shirt off</div>
+  <div class="bubble-time">11:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I have a shirt on</div>
+  <div class="bubble-time">11:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Misfits</div>
+  <div class="bubble-time">11:38 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It&#x27;s cutoff</div>
+  <div class="bubble-time">11:38 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yes lol</div>
+  <div class="bubble-time">11:50 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">But it&#x27;s technically a shirt, so they can&#x27;t kick me out of the gym 🤣</div>
+  <div class="bubble-time">11:51 PM</div>
+</div>
+<div class="date-divider">June 26, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">1:30 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Sup</div>
+  <div class="bubble-time">1:30 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you?</div>
+  <div class="bubble-time">2:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">W New York - Times Square, 1567 Broadway, NY</div>
+  <div class="bubble-time">2:12 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">5 min out</div>
+  <div class="bubble-time">3:34 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Bro, why do you do this?</div>
+  <div class="bubble-time">3:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">It&#x27;s cool if you can&#x27;t</div>
+  <div class="bubble-time">3:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I ain&#x27;t doin shit but work, but you gotta give me a min to come down.</div>
+  <div class="bubble-time">3:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">3:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m coming, don&#x27;t leave</div>
+  <div class="bubble-time">3:45 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Are you on floor 7?</div>
+  <div class="bubble-time">3:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where are you at?</div>
+  <div class="bubble-time">3:51 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes at bar</div>
+  <div class="bubble-time">3:52 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Need a key</div>
+  <div class="bubble-time">3:52 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And you can get new one</div>
+  <div class="bubble-time">3:52 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Floor 43... the very back elevators</div>
+  <div class="bubble-time">3:52 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">At the bar</div>
+  <div class="bubble-time">3:53 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok come on</div>
+  <div class="bubble-time">3:53 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">4306</div>
+  <div class="bubble-time">3:54 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You can bring me up one of those if you wanna</div>
+  <div class="bubble-time">3:55 PM</div>
+</div>
+<div class="date-divider">June 27, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">11:43 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Waiting on that video to get me through three next two days</div>
+  <div class="bubble-time">3:45 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I&#x27;m horny and missing you</div>
+  <div class="bubble-time">3:45 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I miss yo too</div>
+  <div class="bubble-time">8:37 PM</div>
+</div>
+<div class="date-divider">June 29, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">10:50 PM</div>
+</div>
+<div class="date-divider">July 31, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You lose my number?</div>
+  <div class="bubble-time">5:30 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yea</div>
+  <div class="bubble-time">5:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where are you?</div>
+  <div class="bubble-time">6:09 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Houston</div>
+  <div class="bubble-time">6:09 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you off to next?</div>
+  <div class="bubble-time">6:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Home</div>
+  <div class="bubble-time">6:35 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Need some dick</div>
+  <div class="bubble-time">6:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I have some</div>
+  <div class="bubble-time">7:14 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I know</div>
+  <div class="bubble-time">7:54 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When can I get</div>
+  <div class="bubble-time">7:54 PM</div>
+</div>
+<div class="date-divider">August 11, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Daddy</div>
+  <div class="bubble-time">10:08 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">10:42 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning</div>
+  <div class="bubble-time">11:16 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How are you today king?</div>
+  <div class="bubble-time">11:16 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m chillin.. where you at?</div>
+  <div class="bubble-time">11:26 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Nyc</div>
+  <div class="bubble-time">11:32 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You?</div>
+  <div class="bubble-time">11:38 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Chicago</div>
+  <div class="bubble-time">2:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When are you back?</div>
+  <div class="bubble-time">6:43 PM</div>
+</div>
+<div class="date-divider">September 11, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi daddy</div>
+  <div class="bubble-time">8:46 PM</div>
+</div>
+<div class="date-divider">September 12, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hiiii</div>
+  <div class="bubble-time">8:44 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Aye!</div>
+  <div class="bubble-time">9:21 PM</div>
+</div>
+<div class="date-divider">September 13, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo, you coming to see daddy today right?</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I can come Monday I&#x27;m not home had to go to a family event</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I was trying to come before I left</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ah ok.. maybe when I come back then ..I just got here but my flight leave at 6am tomorrow</div>
+  <div class="bubble-time">12:55 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Came here for one day to celebrate my bday and then go back lol</div>
+  <div class="bubble-time">12:56 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Damn would love to feel your dick</div>
+  <div class="bubble-time">12:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When are you back?</div>
+  <div class="bubble-time">12:59 PM</div>
+</div>
+<div class="date-divider">October 04, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Heyyy</div>
+  <div class="bubble-time">2:24 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus good </div>
+  <div class="bubble-time">2:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Coming this week?</div>
+  <div class="bubble-time">2:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yessir </div>
+  <div class="bubble-time">7:46 PM</div>
+</div>
+<div class="date-divider">October 05, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">What day?</div>
+  <div class="bubble-time">9:22 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Actually next Monday</div>
+  <div class="bubble-time">10:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">10:56 AM</div>
+</div>
+<div class="date-divider">October 07, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">9:17 PM</div>
+</div>
+<div class="date-divider">October 08, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">11:51 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus good</div>
+  <div class="bubble-time">11:52 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You miss this big heavy ass dick huh.</div>
+  <div class="bubble-time">11:53 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">So much</div>
+  <div class="bubble-time">11:54 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You miss me?</div>
+  <div class="bubble-time">11:55 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Hell yea I miss you..</div>
+  <div class="bubble-time">12:06 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Miss you more</div>
+  <div class="bubble-time">2:28 PM</div>
+</div>
+<div class="date-divider">October 09, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can I get pic of that heavy ass dick?</div>
+  <div class="bubble-time">10:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">😍</div>
+  <div class="bubble-time">10:36 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ummm sure..</div>
+  <div class="bubble-time">11:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_7748.jpg</div></div>
+  <div class="bubble-time">11:03 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_4173.JPG</div></div>
+  <div class="bubble-time">11:03 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Nigga, you don&#x27;t miss me... you prolly got all kinda niggas hunching and nuttin in yo shit..</div>
+  <div class="bubble-time">11:05 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I don&#x27;t daddy</div>
+  <div class="bubble-time">11:10 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Promise you I don&#x27;t</div>
+  <div class="bubble-time">11:11 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can&#x27;t wait to feel you inside me</div>
+  <div class="bubble-time">11:11 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Shid I can&#x27;t wait either.</div>
+  <div class="bubble-time">12:57 PM</div>
+</div>
+<div class="date-divider">October 11, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">8:53 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus good</div>
+  <div class="bubble-time">10:55 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When are you here?</div>
+  <div class="bubble-time">10:56 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Weekend after next weekend.</div>
+  <div class="bubble-time">12:12 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">12:22 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">May not be here</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thought you were coming Monday</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where it say I&#x27;m coming Monday?</div>
+  <div class="bubble-time">12:27 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You were suppose to come this Monday</div>
+  <div class="bubble-time">12:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Then on October 5th you said actually next Monday</div>
+  <div class="bubble-time">12:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Via text to me</div>
+  <div class="bubble-time">12:39 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh.. ok I think you right..</div>
+  <div class="bubble-time">12:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You ain&#x27;t have to check me like that tho lol</div>
+  <div class="bubble-time">12:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where you supposed to be goin?</div>
+  <div class="bubble-time">12:41 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">My friend birthday is that weekend haven&#x27;t made plans</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Coming back the Monday night tho</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Which is the 20th</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I can see you the 21st</div>
+  <div class="bubble-time">12:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And LOL I won&#x27;t do that again Daddy</div>
+  <div class="bubble-time">12:44 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I was there for my Birthday, but I was only there for a day.</div>
+  <div class="bubble-time">12:45 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Imma be there the weekend of the 24th</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="date-divider">October 12, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I don&#x27;t want to get fucked until I see you. Can I call you to help me nut?</div>
+  <div class="bubble-time">10:51 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Let me know</div>
+  <div class="bubble-time">10:55 AM</div>
+</div>
+<div class="date-divider">October 14, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">8:27 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">8:40 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you help me?</div>
+  <div class="bubble-time">8:46 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wus wrong?</div>
+  <div class="bubble-time">9:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I want to nut</div>
+  <div class="bubble-time">9:06 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Seeing if you can help me</div>
+  <div class="bubble-time">9:06 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m on the phone right now </div>
+  <div class="bubble-time">9:22 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Cool how long?</div>
+  <div class="bubble-time">9:26 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I was bout to fuk real quick </div>
+  <div class="bubble-time">9:59 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I wanna open you up and make that hole talk...</div>
+  <div class="bubble-time">10:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I wan you too</div>
+  <div class="bubble-time">10:06 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I can nut in 2 min on phone</div>
+  <div class="bubble-time">10:06 AM</div>
+</div>
+<div class="date-divider">October 18, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">👀</div>
+  <div class="bubble-time">9:55 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo</div>
+  <div class="bubble-time">7:53 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You good?</div>
+  <div class="bubble-time">10:27 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea I&#x27;m good.. wyd</div>
+  <div class="bubble-time">10:28 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Driving home</div>
+  <div class="bubble-time">10:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you help me nut when I get home so I can goto sleep?</div>
+  <div class="bubble-time">10:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What time?</div>
+  <div class="bubble-time">10:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m at a concert right now</div>
+  <div class="bubble-time">10:49 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">15 min</div>
+  <div class="bubble-time">10:50 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I want to swallow you</div>
+  <div class="bubble-time">11:24 PM</div>
+</div>
+<div class="date-divider">October 19, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning</div>
+  <div class="bubble-time">11:05 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Help me now?</div>
+  <div class="bubble-time">11:05 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Man I&#x27;m not good at phone sex bro.. that shit weird to me.</div>
+  <div class="bubble-time">12:13 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Don&#x27;t need phone sex</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Just need you to tell me shut the fuck up</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And suck that dick</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Or take that dick</div>
+  <div class="bubble-time">12:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Call me your bitch</div>
+  <div class="bubble-time">12:24 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">No?</div>
+  <div class="bubble-time">1:04 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Not right now.. I&#x27;m busy</div>
+  <div class="bubble-time">1:06 PM</div>
+</div>
+<div class="date-divider">November 10, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">9:31 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Aye Wutup</div>
+  <div class="bubble-time">9:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">How you?</div>
+  <div class="bubble-time">9:57 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Horny, dick hard asf</div>
+  <div class="bubble-time">10:02 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Let me see</div>
+  <div class="bubble-time">10:05 AM</div>
+</div>
+<div class="date-divider">November 11, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey daddy</div>
+  <div class="bubble-time">8:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When are you back?</div>
+  <div class="bubble-time">8:36 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Is it cold there?</div>
+  <div class="bubble-time">8:46 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">A little</div>
+  <div class="bubble-time">9:22 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I see your partner is here was hoping you were</div>
+  <div class="bubble-time">9:23 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">When you want daddy to come up there?</div>
+  <div class="bubble-time">10:41 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Whenever you come</div>
+  <div class="bubble-time">5:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I&#x27;m open</div>
+  <div class="bubble-time">5:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok lemme see...</div>
+  <div class="bubble-time">5:20 PM</div>
+</div>
+<div class="date-divider">November 23, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey daddy</div>
+  <div class="bubble-time">11:23 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup</div>
+  <div class="bubble-time">11:35 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup baby</div>
+  <div class="bubble-time">11:36 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Good miss you</div>
+  <div class="bubble-time">12:19 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Need that dick</div>
+  <div class="bubble-time">12:19 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I miss you too...</div>
+  <div class="bubble-time">12:47 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You in NYC next weekend?</div>
+  <div class="bubble-time">12:47 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes</div>
+  <div class="bubble-time">2:08 PM</div>
+</div>
+<div class="date-divider">November 27, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Happy Thanksgiving Daddy</div>
+  <div class="bubble-time">9:04 AM</div>
+</div>
+<div class="date-divider">December 03, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you stay in la until Friday I want to come</div>
+  <div class="bubble-time">12:32 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m back in Houston now </div>
+  <div class="bubble-time">12:47 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you off to next?</div>
+  <div class="bubble-time">2:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Houston </div>
+  <div class="bubble-time">2:55 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">After Houston</div>
+  <div class="bubble-time">4:57 PM</div>
+</div>
+<div class="date-divider">January 18, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hi daddy</div>
+  <div class="bubble-time">2:14 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wutup</div>
+  <div class="bubble-time">2:46 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">In ATL where you?</div>
+  <div class="bubble-time">2:49 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m there too.. are you tryna get fucked today?</div>
+  <div class="bubble-time">3:00 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes</div>
+  <div class="bubble-time">4:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Oh jus lemme know, I think imma get ready to head to the gym</div>
+  <div class="bubble-time">4:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Where you staying?</div>
+  <div class="bubble-time">5:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Downtown</div>
+  <div class="bubble-time">6:42 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I&#x27;m leaving in am</div>
+  <div class="bubble-time">9:59 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Need some dick</div>
+  <div class="bubble-time">9:59 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I leave in the am too</div>
+  <div class="bubble-time">10:02 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Where you gonna get dick from?</div>
+  <div class="bubble-time">10:02 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You</div>
+  <div class="bubble-time">10:04 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Tonight</div>
+  <div class="bubble-time">10:04 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Why yo as wit till the 11th hour to hit me tho? Where you at?</div>
+  <div class="bubble-time">10:05 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I been horny and lookin to something to fuk all day</div>
+  <div class="bubble-time">10:05 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Buckhead</div>
+  <div class="bubble-time">10:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Send me pic</div>
+  <div class="bubble-time">10:06 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Sorry</div>
+  <div class="bubble-time">10:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What time yo flight bro </div>
+  <div class="bubble-time">10:07 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I don&#x27;t do pics</div>
+  <div class="bubble-time">10:07 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">6am</div>
+  <div class="bubble-time">10:08 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">OK, I respect that... But don&#x27;t  ask me for no more dik pics then lol.</div>
+  <div class="bubble-time">10:08 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_6654.MOV</div></div>
+  <div class="bubble-time">10:09 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Im still going to ask</div>
+  <div class="bubble-time">10:09 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It&#x27;s all good..you get the video I jus sent?</div>
+  <div class="bubble-time">10:10 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Not letting me open</div>
+  <div class="bubble-time">10:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">But anyway, you wasnt tryna see me this see me this weekend bro.</div>
+  <div class="bubble-time">10:11 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Tryna see you now</div>
+  <div class="bubble-time">10:11 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You been here all day prolly playin wit dem dusty atl fake fag niggas then you wanna hit me last talkin bout you wanna link up.</div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I was sleep</div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And then watching the game before that</div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When you said you were going to gym</div>
+  <div class="bubble-time">10:14 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I ain&#x27;t gon be able to fuk wit you tonight bro.</div>
+  <div class="bubble-time">10:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Why?</div>
+  <div class="bubble-time">10:15 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I don&#x27;t fuck with fags you know that</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Right when my dude say &#x27;ok let&#x27;s start getting ready&#x27; then you wanna text.. </div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I rather not get fucked</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">We bout to go out.</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I like a man&#x27;s man</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">And I like YOU</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok what about after yahll come back?</div>
+  <div class="bubble-time">10:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I wanna fuk you..</div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">When are you coming to nyc?</div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I wanna fuk you now.. </div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I want you to fuck me</div>
+  <div class="bubble-time">10:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m mad as shit </div>
+  <div class="bubble-time">10:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m in new York this weekend </div>
+  <div class="bubble-time">10:18 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I want to taste that dick down my throat</div>
+  <div class="bubble-time">10:18 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Try to fuck me tonight</div>
+  <div class="bubble-time">10:18 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can be 15 min</div>
+  <div class="bubble-time">10:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I ain&#x27;t fuk no pussy this whole weekend.. You was sposed to be blowing my phone up early in the morning to hop on the dick.</div>
+  <div class="bubble-time">10:19 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I fuk my dude the other day and das the only play I got.</div>
+  <div class="bubble-time">10:20 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I think it end at 3 AM. I&#x27;ll have to try to come thru and smash before you head to the airport bro.</div>
+  <div class="bubble-time">10:20 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yes do that</div>
+  <div class="bubble-time">10:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Make me swallow your nut</div>
+  <div class="bubble-time">10:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Put that dick all inside me</div>
+  <div class="bubble-time">10:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I called you earlier you didn&#x27;t answer</div>
+  <div class="bubble-time">10:22 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Fuk </div>
+  <div class="bubble-time">10:25 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Take the next flight back bro..</div>
+  <div class="bubble-time">10:25 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I have to get on that flight</div>
+  <div class="bubble-time">10:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Come at 3am</div>
+  <div class="bubble-time">10:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Or I&#x27;ll come at 3am</div>
+  <div class="bubble-time">10:26 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok I&#x27;ll keep you posted..</div>
+  <div class="bubble-time">10:27 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I might have to dik you in the back of this truck I&#x27;m driving like I sometimes have to do wit my other sluts 🤷🏾‍♂️</div>
+  <div class="bubble-time">10:32 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">10:33 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I&#x27;m let you know</div>
+  <div class="bubble-time">10:33 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Have lube?</div>
+  <div class="bubble-time">10:33 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yea </div>
+  <div class="bubble-time">10:33 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I got my travel lube..and a condom somewhere around here..</div>
+  <div class="bubble-time">10:34 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">You can bring me a few jus incase </div>
+  <div class="bubble-time">10:34 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">10:35 PM</div>
+</div>
+<div class="date-divider">January 19, 2026</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Yo </div>
+  <div class="bubble-time">10:27 AM</div>
+</div>
+<div class="date-divider">January 20, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Yo</div>
+  <div class="bubble-time">7:05 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Wyd</div>
+  <div class="bubble-time">8:00 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">In nyc</div>
+  <div class="bubble-time">6:43 PM</div>
+</div>
+<div class="date-divider">January 25, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey</div>
+  <div class="bubble-time">12:46 PM</div>
+</div>
+<div class="date-divider">February 14, 2026</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Happy Valentine&#x27;s Day</div>
+  <div class="bubble-time">9:02 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Good morning </div>
+  <div class="bubble-time">11:15 AM</div>
+</div>
+</div></div><script>var w=document.getElementById('tw');w.scrollTop=w.scrollHeight;</script></body></html>
