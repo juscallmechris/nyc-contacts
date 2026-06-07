@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>+1 (917) 686-3558</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:        #0c0b0a;
+  --bg2:       #111009;
+  --surf:      #181612;
+  --surf2:     #201e17;
+  --surf3:     #272419;
+  --border:    #2c2920;
+  --border2:   #3d3928;
+  --gold:      #d4a853;
+  --gold-lt:   #e8c07a;
+  --gold-dim:  #7a5e28;
+  --rust:      #c45b3a;
+  --sky:       #4a8fc4;
+  --teal:      #3a9e82;
+  --text:      #e4ddd0;
+  --text-dim:  #8a7f6e;
+  --text-mute: #4a4438;
+}
+body::after {
+  content:''; position:fixed; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999;
+}
+body::before {
+  content:''; position:fixed;
+  top:-200px; left:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(212,168,83,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Lora',serif;
+  display:flex; flex-direction:column;
+  overflow-x:hidden;
+}
+/* Header */
+.top-bar{
+  flex-shrink:0; z-index:200;
+  background:rgba(12,11,10,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:1rem;
+  padding:0 1.25rem; height:52px;
+}
+.back{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--text-dim);
+  text-decoration:none; letter-spacing:.03em;
+  display:flex; align-items:center; gap:5px;
+  transition:color .15s;
+}
+.back:hover{color:var(--gold)}
+.contact-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700; font-size:1rem;
+  color:var(--text); letter-spacing:-.01em;
+}
+.msg-count{
+  margin-left:auto;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem; color:var(--text-mute);
+}
+.gold-dot{color:var(--gold)}
+/* Note banner */
+.note-banner{
+  flex-shrink:0;
+  background:linear-gradient(90deg,rgba(212,168,83,.06),transparent);
+  border-bottom:1px solid var(--border);
+  padding:6px 1.25rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem; color:var(--text-mute);
+  letter-spacing:.04em;
+}
+/* Scrollable message pane */
+.thread-wrap{
+  flex:1;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+}
+/* Thread inner — this is the scrollable box */
+.thread{
+  width:680px; max-width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:20px 1rem 24px;
+  display:flex; flex-direction:column; gap:4px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border2) transparent;
+}
+.thread::-webkit-scrollbar{width:5px}
+.thread::-webkit-scrollbar-track{background:transparent}
+.thread::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.thread::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+.thread::-webkit-scrollbar-button{display:none;height:0}
+.date-divider{
+  text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:14px 0 6px; position:relative;
+}
+.date-divider::before,.date-divider::after{
+  content:''; position:absolute; top:50%;
+  width:30%; height:1px; background:var(--border);
+}
+.date-divider::before{left:0}
+.date-divider::after{right:0}
+.bubble-wrap{display:flex; flex-direction:column}
+.bubble-wrap.out{align-items:flex-end}
+.bubble-wrap.inc{align-items:flex-start}
+.bubble{
+  max-width:72%; padding:9px 13px;
+  border-radius:16px;
+  font-size:.88rem; line-height:1.5;
+  position:relative; word-break:break-word;
+}
+.bubble.out{
+  background:var(--gold-dim);
+  color:var(--text);
+  border-bottom-right-radius:4px;
+  border:1px solid rgba(212,168,83,.15);
+}
+.bubble.inc{
+  background:var(--surf2);
+  color:var(--text);
+  border-bottom-left-radius:4px;
+  border:1px solid var(--border);
+}
+.bubble-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem; color:var(--text-mute);
+  margin-top:3px; padding:0 2px;
+}
+.bubble-wrap.out .bubble-time{text-align:right}
+.attach{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; color:var(--gold-dim);
+  font-style:italic; margin-top:4px;
+}
+</style></head><body>
+
+<div class="top-bar">
+  <a class="back" href="../index.html">&#8592; Contacts</a>
+  <div>
+    <div class="contact-name">+1 (917) 686-3558</div>
+  </div>
+  <div class="msg-count"><span class="gold-dot">49</span> messages</div>
+</div>
+<div class="note-banner">Jan 1, 2025 to present &mdash; newest at bottom</div>
+<div class="thread-wrap">
+<div class="thread" id="tw">
+<div class="date-divider">July 28, 2025</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">This Chris</div>
+  <div class="bubble-time">7:38 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Hey man.  Thanks for messaging.  Message me tomorrow to confirm what time works for you.  I leave town Wednesday morning so tomorrow night is great.</div>
+  <div class="bubble-time">7:40 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">9pm</div>
+  <div class="bubble-time">7:40 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Perfect.  Looking forward to meeting you.  Have a safe drive home.  </div>
+  <div class="bubble-time">7:41 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Thank you.</div>
+  <div class="bubble-time">7:43 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">You can make it up by sending me some photos 😈😊😈.  Haha.  </div>
+  <div class="bubble-time">7:53 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">lol, I was already considering it…</div>
+  <div class="bubble-time">8:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">It’s this one in particular I wanna send you that I think is hot … please don’t share tho..</div>
+  <div class="bubble-time">8:06 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I won’t share.  I’ll delete afterwards.  </div>
+  <div class="bubble-time">8:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">.. cause it has my face in it..</div>
+  <div class="bubble-time">8:08 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out"><div class="attach">&#128206; IMG_4070.HEIC</div></div>
+  <div class="bubble-time">8:08 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I had no clue you could send something g like that.  Very fun.  Thanks Chris.  Let me know if you’re good for tomorrow later tomorrow afternoon.</div>
+  <div class="bubble-time">8:10 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok bet..</div>
+  <div class="bubble-time">9:47 PM</div>
+</div>
+<div class="date-divider">July 29, 2025</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Morning.  I’m leaving town tonight, so we will have to reschedule.  Bummer.  Please only message me on the site.  I was really hoping to connect yesterday.</div>
+  <div class="bubble-time">6:03 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">😢</div>
+  <div class="bubble-time">6:10 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Can you do earlier? 7?</div>
+  <div class="bubble-time">6:11 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">7pm</div>
+  <div class="bubble-time">6:11 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I should be able to make 7pm..</div>
+  <div class="bubble-time">6:12 AM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Message me later and let me know your plans.  Have a great day.</div>
+  <div class="bubble-time">6:14 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Okie dokie </div>
+  <div class="bubble-time">6:14 AM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">What part of town you gonna be on?</div>
+  <div class="bubble-time">1:31 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I10 and Beltway 8.  Does that work for you?</div>
+  <div class="bubble-time">1:57 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Let me know please.  </div>
+  <div class="bubble-time">2:16 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">That’s good.. not far from me at all.. I think I remember you telling me that before..</div>
+  <div class="bubble-time">2:17 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Great.  What time works for you!</div>
+  <div class="bubble-time">2:18 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">7pm still works best for me.. I’m at work right now..</div>
+  <div class="bubble-time">2:20 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Wonderful.  Want to aim for earlier? 6pm? What kind of work?</div>
+  <div class="bubble-time">2:21 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">7pm is fine just trying to be flexible for your needs.</div>
+  <div class="bubble-time">2:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I work customer service… I get off at 6 I can try to get to you for 6:30 but def no later than 7</div>
+  <div class="bubble-time">2:26 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Just message me when you’re on your way.  Address: 
+1888 Brittmoore Rd
+Houston, TX 77043</div>
+  <div class="bubble-time">2:28 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">2:37 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">ETA about 6:10pm</div>
+  <div class="bubble-time">5:01 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Take your time. 6:30pm is fine. I’m going to run an errand to the store.  Need anything?  I’m grabbing some dinner for later as well.</div>
+  <div class="bubble-time">5:06 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok cool, can’t think of anything I need</div>
+  <div class="bubble-time">5:07 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m getting close</div>
+  <div class="bubble-time">6:22 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok. Park out front and I’ll come down</div>
+  <div class="bubble-time">6:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">6:23 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Like 10 min away</div>
+  <div class="bubble-time">6:23 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok</div>
+  <div class="bubble-time">6:24 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Park out front. There’s a blue door to the left of the front office.  I’ll walk out from there</div>
+  <div class="bubble-time">6:34 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I’m at the leasing office </div>
+  <div class="bubble-time">6:36 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Ok</div>
+  <div class="bubble-time">6:36 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Ok. Walking out now</div>
+  <div class="bubble-time">6:36 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">I’m here</div>
+  <div class="bubble-time">6:36 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Great to meet you.  I did not explain but I have a kid who uses my phone often.  I’m going to be deleting your messages but I’ll save your info.  I’ll reach out the next time I’m in town.  </div>
+  <div class="bubble-time">7:17 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">I remember you mentioning family before.. I def respect that.. absolutely hit me up when you free again.. 😊</div>
+  <div class="bubble-time">7:19 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Thanks man.  You’re a total gentleman.   Thank you!</div>
+  <div class="bubble-time">7:20 PM</div>
+</div>
+<div class="bubble-wrap out">
+  <div class="bubble out">Thank you bro.. I jus made it home </div>
+  <div class="bubble-time">7:39 PM</div>
+</div>
+<div class="bubble-wrap inc">
+  <div class="bubble inc">Happy you made it safely.</div>
+  <div class="bubble-time">7:40 PM</div>
+</div>
+</div></div><script>var w=document.getElementById('tw');w.scrollTop=w.scrollHeight;</script></body></html>
